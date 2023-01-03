@@ -4,8 +4,7 @@ before_install:
   - sudo apt-get update
 
 node_js:
-  - node
-
+  - 18
 
 cache:
   directories:
