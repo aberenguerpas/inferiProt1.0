@@ -1,7 +1,5 @@
 language: node_js
 dist: jammy
-before_install:
-  - sudo apt-get update
 
 node_js:
   - 18
@@ -11,4 +9,5 @@ cache:
   - node_modules
 
 after_success:
-  - npm run build
+  - cd front
+  - npm run build /front
