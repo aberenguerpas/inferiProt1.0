@@ -1,9 +1,11 @@
 language: node_js
+dist: focal
+before_install:
+  - sudo apt-get update
 
 node_js:
   - node
-env:
-    - CXX=g++-4.8
+
 
 cache:
   directories:
