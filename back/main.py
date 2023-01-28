@@ -2,10 +2,18 @@ from elasticsearch import Elasticsearch
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from opensearchpy import OpenSearch, RequestsHttpConnection
+import configparser
+
+config = configparser.ConfigParser()
+config.read("config.ini")
 
 host = 'search-server-search-sn3tyevnqczq4x7z7prx7aeq2m.eu-west-3.es.amazonaws.com'
 region= 'eu-west-3'
-auth = ('Elastiko', '#In_ferI4')
+
+username = config['credentials']['username']
+password = config['credentials']['password']
+
+auth = (username, password)
 
 # Create the client with SSL/TLS and hostname verification disabled.
 client = OpenSearch(
