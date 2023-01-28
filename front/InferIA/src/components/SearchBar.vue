@@ -1,12 +1,19 @@
 <script setup >
-import {ref} from 'vue'
+import { ref, onMounted } from 'vue'
 
 const emit = defineEmits(['response'])
-const keywords = ref('')
+const keywords = ref(new URLSearchParams(window.location.search).get('keywords'))
+
+onMounted(() => {
+  if(new URLSearchParams(window.location.search).has('keywords'))
+    onEnter()
+})
 
 async function onEnter(){
     emit('response', 'loading')
-    const response = await fetch("http://localhost:8000/search?keywords="+keywords.value,{
+    window.dataLayer = window.dataLayer || [];
+ 		window.dataLayer.push({'event': 'busqueda','searchtext': keywords.value});
+    const response = await fetch("http://inferia.io/api/search?keywords="+keywords.value,{
     headers: new Headers({ 'Content-type': 'application/json'}),
     })
 
@@ -14,7 +21,6 @@ async function onEnter(){
       const res = await response.json()
       emit('response', res)
     }
-   
 }
 </script>
 
@@ -33,12 +39,13 @@ async function onEnter(){
         width: 100%;
         border: none;
         padding-left: 3.5em;
+        margin-top:1em;
         margin-bottom:1em;
     }
 
     .lupa{
         position: absolute;
-        top: 22%;
+        top: 35%;
         left: 1.5em;
         color: #5c7284;
         z-index: 2;

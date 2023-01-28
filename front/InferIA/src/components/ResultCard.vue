@@ -6,16 +6,13 @@ const props = defineProps({
 
 <template>
   <div class="card">
-    <p class="m-0">
-        <span class="fw-bolder"> {{ data['provider'] }}</span>
-        <span class="float-end"> {{ new Date(data['modified']).toLocaleDateString('es-Es')}}</span>
-    </p>
   <h5 class="mt-2 card-header fw-bolder">{{data['title']}}</h5>
   <div class="card-body">
     <ul class="list-group list-group-horizontal">
         <li class="list-group-item"><i class="bi bi-file-earmark-ruled"></i> CSV</li>
         <li class="list-group-item"><i class="bi bi-patch-check"></i> <a :href="data['license']">Licencia</a></li>
         <li class="list-group-item"><i class="bi bi-cash"></i> Gratis</li>
+        <li class="list-group-item"><i class="bi bi-box"></i> {{data['provider']}} </li>
     </ul>
     
     <p class="mt-2 card-text text-secondary">{{data['description']}}</p>
@@ -47,8 +44,7 @@ const props = defineProps({
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         white-space: nowrap!important;
-        border: none;
-
+        border: none; 
     }
     .card-body{
         padding: 0;
@@ -61,6 +57,15 @@ const props = defineProps({
 
     .list-group-item{
         padding-left: 0;
+    }
+
+    @media only screen and (max-width: 992px) {
+    li, a{
+        font-size: .9em!important;
+        }
+    }
+    h5{
+        font-size: 1em;
     }
 
 

@@ -12,32 +12,37 @@ const results = ref([])
 </script>
 
 <template>
-  <headerCompVue/>
+  <div>
   <main>
+    <headerCompVue/>
     <SearchBarVue @response="(msg) => results = msg" />
+    <p> <strong>Resultados:</strong> {{ results['total']}}</p>
     <hr>
-   <p> <strong>Resultados:</strong> {{ results['total']}}</p>
     <div class="container text-center">
       <div class="row">
         <div class="col-8">
-        <div v-if="results['results']==0">
-          <p class="mt-5">No hemos encontrado ningún resultado para tu búsqueda :(</p>
-        </div>
-        <div v-else-if="results=='loading'">
-          <LoadCompVue/>
-        </div>
-       <div v-else> 
-          <div v-for="todo in results['results']" :key="todo.title">
-            <ResultCardVue :data="todo" />
+          <div v-if="results['results']==0">
+            <p class="mt-5">No hemos encontrado ningún resultado para tu búsqueda :(</p>
+          </div>
+          <div v-else-if="results=='loading'">
+            <LoadCompVue/>
+          </div>
+        <div v-else> 
+            <div v-for="todo in results['results']" :key="todo.title">
+              <ResultCardVue :data="todo" />
+            </div>
           </div>
         </div>
+        <div class="col-4 dataform">
+          <DataFormVue/>
         </div>
-        <div class="col-4">
+        <div class="dataformMob">
           <DataFormVue/>
         </div>
       </div>
     </div>
   </main>
+</div>
 </template>
 
 <style scoped>
@@ -45,7 +50,31 @@ const results = ref([])
 
 *{
   font-family: 'Poppins', sans-serif;
-  margin-top:0;
-  padding-top:0;
+}
+
+.container{
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 992px) {
+
+  .dataform{
+        display: none!important;
+  }
+  .col-8{
+    width: 100%;
+  }
+  .dataformMob > img{
+    width: 30%!important;
+  }
+  body { padding-top: 100px; } 
+}
+
+@media only screen and (min-width: 992px) {
+  .dataformMob{
+    display: none;
+  }
 }
 </style>

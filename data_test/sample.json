@@ -1,0 +1,34 @@
+{
+    "identifier": "a01002820-academias-andaluzas",
+    "title": "Academias andaluzas",
+    "description": "Información de las academias que forman parte del Instituto de Academias de Andalucía. El conjunto de datos recoge el nombre, localidad, provincia, datos de contacto, fecha y normas de creación y estatutos de cada una de ellas.",
+    "theme": "educacion",
+    "resources": [
+        {
+            "name": "CSV - Academias andaluzas",
+            "downloadUrl": "https://www.juntadeandalucia.es/datosabiertos/portal/dataset/f3973f41-f4d0-4b58-a5fe-a7010b473003/resource/9101f6e6-d932-455a-ac62-dcac789f297f/download/dataset_academias_andaluzas.csv",
+            "mediaType": "text/csv",
+            "size": "130048"
+        },
+        {
+            "name": "XLS - Academias andaluzas",
+            "downloadUrl": "https://www.juntadeandalucia.es/datosabiertos/portal/dataset/f3973f41-f4d0-4b58-a5fe-a7010b473003/resource/11d6fd47-1128-4bae-9887-ed2bc7bfbc6d/download/dataset_academias_andaluzas.xls",
+            "mediaType": "application/vnd.ms-excel",
+            "size": "130048"
+        }
+    ],
+    "modified": "jue, 08 sep 2022 07:39:55 GMT+0000",
+    "license": "http://creativecommons.org/licenses/by/4.0/deed.es_ES",
+    "source": "https://datos.gob.es/es",
+
+    "price": "0",
+    "sample": {
+        "col":["1","2","3","5","6","7","8","9"],
+        "col2":["1","2","3","5","6","7","8","9"],
+        "col3":["1","2","3","5","6","7","8","9"],
+        "col4":["1","2","3","5","6","7","8","9"],
+        "col5":["1","2","3","5","6","7","8","9"]
+    },
+    "geo_coverage":"Andalucía",
+    "temporal_coverage":"Desde 01/01/2021 - 0:00 (UTC+01:00) hasta 31/12/2021 - 0:00 (UTC+01:00)"
+}
