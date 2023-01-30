@@ -12,7 +12,6 @@ region= 'eu-west-3'
 
 username = config['credentials']['username']
 password = config['credentials']['password']
-
 auth = (username, password)
 
 # Create the client with SSL/TLS and hostname verification disabled.
