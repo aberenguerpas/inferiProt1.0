@@ -5,7 +5,7 @@ from opensearchpy import OpenSearch, RequestsHttpConnection
 import configparser
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+config.read("./config.ini")
 
 host = 'search-server-search-sn3tyevnqczq4x7z7prx7aeq2m.eu-west-3.es.amazonaws.com'
 region= 'eu-west-3'
@@ -46,7 +46,17 @@ async def search(keywords:str):
 
     for hit in resp['hits']['hits']:
         data = hit['_source']
+        data['id'] = hit['_id']
 
         result.append(data)
 
     return {"results": result, "total": total}
+
+@app.get("/details")
+async def search(id):
+
+    resp = client.search(index="search-test", body={"query":{"terms": {"_id": [id]}}})
+
+    result = resp['hits']['hits'][0]['_source']
+
+    return {"results": result}
