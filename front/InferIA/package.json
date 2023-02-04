@@ -12,6 +12,7 @@
     "@vue-hero-icons/solid": "^1.7.2",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
+    "pinia": "^2.0.30",
     "vue": "^3.2.45"
   },
   "devDependencies": {

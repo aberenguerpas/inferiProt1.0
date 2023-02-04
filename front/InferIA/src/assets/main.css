@@ -18,6 +18,13 @@ a,
   border-color: #47b5ff;
 }
 
+
+.btn:hover{
+  background-color: transparent;
+  border-color: #47b5ff;
+  color: #47b5ff;
+}
+
 @media (hover: hover) {
   a:hover {
     color: #47b5ff!important;
@@ -26,20 +33,17 @@ a,
 }
 
 @media (min-width: 1024px) {
-  body {
-    /*display: flex;
-    place-items: center;*/
-  }
+ 
 
   #app {
     display: grid;
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 }
 
 @media (max-width: 992px) {
   #app {
-    padding: 0 1em;
+    padding: 0 2em;
   }
 }
 

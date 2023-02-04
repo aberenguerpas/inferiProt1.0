@@ -20,8 +20,10 @@
     }
     .card{
         margin-top: 1em;
+ 
     }
     
+
 @media only screen and (max-width: 992px) {
 
     img{
@@ -33,5 +35,11 @@
     a,p{
         font-size: 0.9em!important;
     }
+
+    .btn-primary{
+        width: 100%;
+    }
+
+    
 }
 </style>

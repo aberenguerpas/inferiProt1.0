@@ -1,15 +1,29 @@
 <script setup >
 import { ref, onMounted } from 'vue'
+import {useLastKeyStore} from '../store/LastSearch.js'
+import { storeToRefs } from 'pinia';
+const useLastKey = useLastKeyStore()
+
+const {keywords} = storeToRefs(useLastKey)
 
 const emit = defineEmits(['response'])
-const keywords = ref(new URLSearchParams(window.location.search).get('keywords'))
+/*keywords.value = ref(new URLSearchParams(window.location.search).get('keywords'))*/
 
 onMounted(() => {
+  if(keywords.value){
+    document.getElementById('textInput').value = keywords.value
+    onEnter()
+  }
+
+
   if(new URLSearchParams(window.location.search).has('keywords'))
     onEnter()
+    
 })
 
 async function onEnter(){
+  
+    keywords.value =  document.getElementById('textInput').value
     emit('response', 'loading')
     window.dataLayer = window.dataLayer || [];
  		window.dataLayer.push({'event': 'busqueda','searchtext': keywords.value});
@@ -21,13 +35,15 @@ async function onEnter(){
       const res = await response.json()
       emit('response', res)
     }
+
 }
+
 </script>
 
 <template>
 <form id="searchBox" @submit.prevent="onEnter">
   <i class="bi bi-search lupa"></i>
-  <input v-model="keywords" placeholder="Buscar...">
+  <input  placeholder="Buscar.." id="textInput">
 </form>
 </template>
 

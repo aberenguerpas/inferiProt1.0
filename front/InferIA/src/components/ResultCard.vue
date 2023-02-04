@@ -1,26 +1,41 @@
 <script setup>
-const props = defineProps({
-  data: String
+import { RouterLink } from "vue-router";
+import { computed } from 'vue'
+
+const props = defineProps(['data'])
+
+
+const cutDescription = computed( ()=> {
+
+    if(props.data.description.length >= 60){
+        return props.data.description.slice(0,60) + "..."
+    }else {
+        return props.data.description
+    }
+
 })
 </script>
 
+
 <template>
-  <div class="card">
-  <h5 class="mt-2 card-header fw-bolder">{{data['title']}}</h5>
-  <div class="card-body">
-    <ul class="list-group list-group-horizontal">
-        <li class="list-group-item"><i class="bi bi-file-earmark-ruled"></i> CSV</li>
-        <li class="list-group-item"><i class="bi bi-patch-check"></i> <a :href="data['license']">Licencia</a></li>
-        <li class="list-group-item"><i class="bi bi-cash"></i> Gratis</li>
-        <li class="list-group-item"><i class="bi bi-box"></i> {{data['provider']}} </li>
-    </ul>
-    
-    <p class="mt-2 card-text text-secondary">{{data['description']}}</p>
-    
-    <a class="btn btn-info text-white float-end" :href="data['resources'][0]['downloadUrl']">Descargar</a>
-   
-  </div>
-</div>
+    <router-link :to="`/details/${data.id}`">
+        <div class="card">
+            <h5 class="mt-2 card-header fw-bolder">{{data['title']}}</h5>
+            <div class="card-body">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item"><i class="bi bi-file-earmark-ruled"></i> CSV</li>
+                    <li class="list-group-item"><i class="bi bi-patch-check"></i> <a :href="data['license']">Licencia</a></li>
+                    <li class="list-group-item"><i class="bi bi-cash"></i> Gratis</li>
+                    <li class="list-group-item"><i class="bi bi-box"></i> {{data['provider']}} </li>
+                </ul>
+                
+                <p class="mt-2 card-text text-secondary"> {{ cutDescription  }}</p>
+            
+                
+            </div>
+        </div>
+    </router-link>
+  
 </template>
 
 
@@ -32,8 +47,10 @@ const props = defineProps({
     .card{
         margin-top:1em;
         margin-bottom:1em;
-        padding: 2em;
-        text-align: left;
+        padding: 1em;
+        text-align: justify;
+        font-size: 17px;
+        
     }
     .card:hover{
        background-color: #fafafa; 
@@ -51,10 +68,11 @@ const props = defineProps({
     }
     .card-text{
         max-height: 120px;
-        overflow-y: scroll !important;
         text-overflow: ellipsis !important;
+        overflow: hidden;
     }
 
+    
     .list-group-item{
         padding-left: 0;
     }
@@ -67,6 +85,15 @@ const props = defineProps({
     h5{
         font-size: 1em;
     }
+
+    
+    @media only screen and (min-width: 1000px) {
+    
+        .card{
+            width: 45em;
+        }
+    }
+    
 
 
 </style>
