@@ -5,10 +5,17 @@ import json
 import random
 from tqdm import tqdm
 from opensearchpy import OpenSearch, RequestsHttpConnection
+import configparser
+
+config = configparser.ConfigParser()
+config.read("./config.ini")
 
 host = 'search-server-search-sn3tyevnqczq4x7z7prx7aeq2m.eu-west-3.es.amazonaws.com'
 region= 'eu-west-3'
-auth = ('Elastiko', '#In_ferI4')
+
+username = config['credentials']['username']
+password = config['credentials']['password']
+auth = (username, password)
 
 # Create the client with SSL/TLS and hostname verification disabled.
 client = OpenSearch(
@@ -22,7 +29,7 @@ client = OpenSearch(
 # Successful response!
 print(client.info())
 response = client.indices.delete(
-    index = 'search-test'
+    index = 'search-v1'
 )
 
 files = os.listdir("./data/datos.gob.es") # all files in data
@@ -42,6 +49,6 @@ for file in tqdm(files):
                 'resources': data['resources']
             }
 
-            resp = client.index(index="search-test", id=random.randint(0,999999), body=doc, refresh=True)
+            resp = client.index(index="search-v1", id=random.randint(0,9999999), body=doc, refresh=True)
         except Exception:
             pass
