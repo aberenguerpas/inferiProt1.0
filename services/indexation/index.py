@@ -1,4 +1,3 @@
-from datetime import datetime
 import pandas as pd
 import os
 import json
@@ -36,17 +35,23 @@ files = os.listdir("./data/datos.gob.es") # all files in data
 for file in tqdm(files):
     if file[:5]== 'meta_':
         try:
+            sample = pd.read_csv(data['resources'][0]['path']).to_json(orient="columns")
             with open("./data/datos.gob.es/" + file, 'r') as f:
                 data = json.load(f)
-                
+            
             doc = {
                 'title': data['title'],
+                'img': data['img'],
                 'description': data['description'],
                 'theme': data['theme'],
+                'issued': data['issued'],
                 'modified': data['modified'],
                 'license' : data['license'],
-                'provider': 'Datos.gob.es',
-                'resources': data['resources']
+                'provider': data['source'],
+                'resources': data['resources'],
+                'temporal': data['temporal'],
+                'geo': data['geo'],
+                'sample': sample
             }
 
             resp = client.index(index="search-v1", id=random.randint(0,9999999), body=doc, refresh=True)
