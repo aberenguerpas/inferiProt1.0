@@ -55,8 +55,23 @@ async def search(keywords:str):
 @app.get("/details")
 async def search(id):
 
-    resp = client.search(index="search-test", body={"query":{"terms": {"_id": [id]}}})
+    resp = client.search(index="search-v1", body={"query":{"terms": {"_id": [id]}}})
 
     result = resp['hits']['hits'][0]['_source']
 
     return {"results": result}
+
+@app.get("/search-test")
+async def searchTest(keywords:str):
+    resp = client.search(index="search-v1", size=1000, body={"query":{"match": {"title": {"query": keywords}}}})
+
+    result = []
+    total = resp['hits']['total']['value']
+
+    for hit in resp['hits']['hits']:
+        data = hit['_source']
+        data['id'] = hit['_id']
+
+        result.append(data)
+
+    return {"results": result, "total": total}

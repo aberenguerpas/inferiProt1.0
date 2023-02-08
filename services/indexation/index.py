@@ -5,6 +5,7 @@ import random
 from tqdm import tqdm
 from opensearchpy import OpenSearch, RequestsHttpConnection
 import configparser
+import csv
 
 config = configparser.ConfigParser()
 config.read("./config.ini")
@@ -27,33 +28,45 @@ client = OpenSearch(
 
 # Successful response!
 print(client.info())
-response = client.indices.delete(
-    index = 'search-v1'
-)
+#response = client.indices.delete(
+#    index = 'search-v1'
+#)
 
-files = os.listdir("./data/datos.gob.es") # all files in data
+files = os.listdir("./../../data/datos.gob.es/") # all files in data
 for file in tqdm(files):
     if file[:5]== 'meta_':
         try:
-            sample = pd.read_csv(data['resources'][0]['path']).to_json(orient="columns")
-            with open("./data/datos.gob.es/" + file, 'r') as f:
+           
+            with open("./../../data/datos.gob.es/" + file, 'r') as f:
                 data = json.load(f)
-            
-            doc = {
-                'title': data['title'],
-                'img': data['img'],
-                'description': data['description'],
-                'theme': data['theme'],
-                'issued': data['issued'],
-                'modified': data['modified'],
-                'license' : data['license'],
-                'provider': data['source'],
-                'resources': data['resources'],
-                'temporal': data['temporal'],
-                'geo': data['geo'],
-                'sample': sample
-            }
+                for re in data['resources']:
+                    print(re)
+                    if re['path'] is not None:
+                        if re['path'][-3:]=='csv':
+                            sample = pd.read_csv(re['path'], on_bad_lines='skip', quoting=csv.QUOTE_NONE)
+                            sample.reset_index(inplace=True)
+                            sample = sample.to_json(orient="columns")
+                            print(sample)
+                        else:
+                            sample = None
+                        break
 
-            resp = client.index(index="search-v1", id=random.randint(0,9999999), body=doc, refresh=True)
-        except Exception:
+                doc = {
+                    'title': data['title'],
+                    'img': data['img'],
+                    'description': data['description'],
+                    'theme': data['theme'],
+                    'issued': data['issued'],
+                    'modified': data['modified'],
+                    'license' : data['license'],
+                    'provider': data['source'],
+                    'resources': data['resources'],
+                    'temporal': data['temporal'],
+                    'geo': data['geo'],
+                    'sample': sample
+                }
+
+                resp = client.index(index="search-v1", id=random.randint(0,9999999), body=doc, refresh=True)
+        except Exception as e:
+            print(e)
             pass
