@@ -28,9 +28,9 @@ client = OpenSearch(
 
 # Successful response!
 print(client.info())
-#response = client.indices.delete(
-#    index = 'search-v1'
-#)
+response = client.indices.delete(
+    index = 'search-v1'
+)
 
 files = os.listdir("/home/alberto/OpenDataCrawler/data/datos.gob.es") # all files in data
 for file in tqdm(files):
