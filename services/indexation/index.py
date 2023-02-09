@@ -42,7 +42,7 @@ for file in tqdm(files):
                 for re in data['resources']:
                     if re['path'] is not None:
                         if re['path'][-3:]=='csv':
-                            sample = pd.read_csv(re['path'], on_bad_lines='skip', encoding = "ISO-8859-1", on_bad_lines='skip', engine='python', sep = None )
+                            sample = pd.read_csv(re['path'], encoding = "ISO-8859-1", on_bad_lines='skip', engine='python', sep = None )
                             sample.reset_index(inplace=True, drop=True)
                             sample = sample.to_json(orient="split")
                         else:
