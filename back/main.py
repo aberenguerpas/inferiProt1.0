@@ -39,7 +39,15 @@ app.add_middleware(
 @app.get("/search")
 async def search(keywords:str):
 
-    resp = client.search(index="search-test", size=1000, body={"query":{"match": {"title": {"query": keywords}}}})
+    resp = client.search(index="search-test", size=1000, body={"query":{
+        "match": {
+            "title": {
+                "query": keywords,
+                "fuzziness": "auto"
+                }
+            }
+        }
+    })
 
     result = []
     total = resp['hits']['total']['value']
