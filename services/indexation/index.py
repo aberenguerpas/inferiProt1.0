@@ -32,12 +32,12 @@ print(client.info())
 #    index = 'search-v1'
 #)
 
-files = os.listdir("./../../data/datos.gob.es/") # all files in data
+files = os.listdir("/home/alberto/OpenDataCrawler/data/datos.gob.es") # all files in data
 for file in tqdm(files):
     if file[:5]== 'meta_':
         try:
            
-            with open("./../../data/datos.gob.es/" + file, 'r') as f:
+            with open("/home/alberto/OpenDataCrawler/data/datos.gob.es" + file, 'r') as f:
                 data = json.load(f)
                 for re in data['resources']:
                     if re['path'] is not None:
