@@ -37,7 +37,7 @@ for file in tqdm(files):
     if file[:5]== 'meta_':
         try:
            
-            with open("/home/alberto/OpenDataCrawler/data/datos.gob.es" + file, 'r') as f:
+            with open("/home/alberto/OpenDataCrawler/data/datos.gob.es/" + file, 'r') as f:
                 data = json.load(f)
                 for re in data['resources']:
                     if re['path'] is not None:
