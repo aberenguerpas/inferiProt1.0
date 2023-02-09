@@ -40,13 +40,11 @@ for file in tqdm(files):
             with open("./../../data/datos.gob.es/" + file, 'r') as f:
                 data = json.load(f)
                 for re in data['resources']:
-                    print(re)
                     if re['path'] is not None:
                         if re['path'][-3:]=='csv':
-                            sample = pd.read_csv(re['path'], on_bad_lines='skip', quoting=csv.QUOTE_NONE)
-                            sample.reset_index(inplace=True)
+                            sample = pd.read_csv(re['path'], on_bad_lines='skip', encoding = "ISO-8859-1", on_bad_lines='skip', engine='python', sep = None )
+                            sample.reset_index(inplace=True, drop=True)
                             sample = sample.to_json(orient="columns")
-                            print(sample)
                         else:
                             sample = None
                         break
