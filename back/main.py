@@ -71,8 +71,15 @@ async def search(id):
 
 @app.get("/search-test")
 async def searchTest(keywords:str):
-    resp = client.search(index="search-v1", size=1000, body={"query":{"match": {"title": {"query": keywords}}}})
-
+    resp = client.search(index="search-v1", size=1000, body={"query":{
+        "match": {
+            "title": {
+                "query": keywords,
+                "fuzziness": "auto"
+                }
+            }
+        }
+    })
     result = []
     total = resp['hits']['total']['value']
 
