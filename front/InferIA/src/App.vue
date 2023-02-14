@@ -1,6 +1,6 @@
 <script setup>
 import headerCompVue from './components/HeaderComp.vue';
-import { RouterLink, RouterView } from 'vue-router';
+import {  RouterView } from 'vue-router';
 
 </script>
 

@@ -13,16 +13,54 @@ a,
   transition: 0.4s;
 }
 
+.free{
+    color: #38b000;
+}
+
+.orange{
+  color: #ffb703;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
 .btn{
   background-color: #47b5ff;
   border-color: #47b5ff;
+  font-size: 17px;
 }
 
+a{
+  font-size: 17px;
+}
 
 .btn:hover{
   background-color: transparent;
   border-color: #47b5ff;
   color: #47b5ff;
+}
+
+
+
+h1{
+  font-size: 20px;
+  color: #06283d;
+}
+
+h5, h6{
+  font-size: 17px;
+  color: #66666e;
+}
+
+p{
+  margin-bottom: 0;
+  text-align: justify;
+  color: #889696;
+}
+
+input#textInput:focus-visible {
+  outline: none;
 }
 
 @media (hover: hover) {
@@ -33,8 +71,6 @@ a,
 }
 
 @media (min-width: 1024px) {
- 
-
   #app {
     display: grid;
     padding: 0 1rem;
@@ -43,7 +79,7 @@ a,
 
 @media (max-width: 992px) {
   #app {
-    padding: 0 2em;
+    padding: 0 1em;
   }
 }
 
