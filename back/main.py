@@ -35,31 +35,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-@app.get("/search")
-async def search(keywords:str):
-
-    resp = client.search(index="search-test", size=1000, body={"query":{
-        "match": {
-            "title": {
-                "query": keywords,
-                "fuzziness": "auto"
-                }
-            }
-        }
-    })
-
-    result = []
-    total = resp['hits']['total']['value']
-
-    for hit in resp['hits']['hits']:
-        data = hit['_source']
-        data['id'] = hit['_id']
-
-        result.append(data)
-
-    return {"results": result, "total": total}
-
 @app.get("/details")
 async def search(id):
 
