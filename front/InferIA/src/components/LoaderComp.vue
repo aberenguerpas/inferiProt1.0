@@ -1,10 +1,6 @@
 <template>
-    <span class="loader"></span>
+  <span class="loader"></span>
 </template>
-
-<script setup>
-
-</script>
 
 <style scoped>
 .loader {
@@ -54,5 +50,4 @@
     transform: rotate(-360deg);
   }
 }
-    
 </style>
