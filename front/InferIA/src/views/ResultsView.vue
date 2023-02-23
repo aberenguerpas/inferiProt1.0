@@ -13,9 +13,9 @@ const results = ref([])
     <div class= "container mb-5">
       <div class="row">
         <div class="col-12">
-          <BreadCrumbs :list="['Búsqueda']"/>
+          <BreadCrumbs :list="['Search']"/>
           <SearchBarVue @response="(msg) => results = msg" />
-          <p>Resultados {{ results['total']}}</p>
+          <p>Results {{ results['total']}}</p>
           <hr>
         </div>
       </div>
@@ -23,8 +23,8 @@ const results = ref([])
       <div class="row">
         <div class="col-12 col-lg-8">
           <div v-if="results['results']==0" class="text-center m-5">
-            <h5 class="fw-bold fs-4"> Ups! No hemos encontrado nada</h5>
-            <p class="mt-3 text-center">Pero no te preocupes nosotros te lo podemos conseguir.<br> Haznos saber qué necesitas haciendo click <a href="https://www.inferia.io/solicitar_datos">aquí. </a></p>
+            <h5 class="fw-bold fs-4"> Ups! We haven't found anything!</h5>
+            <p class="mt-3 text-center">Don't worry, we get can get it for you!<br> Let us know what you need clicking <a href="https://www.inferia.io/solicitar_datos">here.</a></p>
           </div>
           <div v-else-if="results=='loading'" class="text-center" >
             <LoadCompVue/>

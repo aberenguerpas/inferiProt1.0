@@ -36,7 +36,6 @@ async function onEnter(){
 
     if(response.ok){
       const res = await response.json()
-      console.log(res)
       emit('response', res)
     }
 
@@ -47,7 +46,7 @@ async function onEnter(){
 <template>
 <form id="searchBox" @submit.prevent="onEnter">
   <i class="bi bi-search lupa"></i>
-  <input placeholder="Buscar..." id="textInput" autocomplete="off" class="">
+  <input placeholder="Search" id="textInput" autocomplete="off" class="">
 </form>
 </template>
 

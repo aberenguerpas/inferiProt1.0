@@ -8,19 +8,19 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://www.inferia.io/">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="https://www.inferia.io/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/vende_tus_datos/">Vende tus datos</a>
+          <a class="nav-link" href="https://www.inferia.io/vende_tus_datos/">Sell your data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/nuestra-historia/">Nuestra historia</a>
+          <a class="nav-link" href="https://www.inferia.io/nuestra-historia/">Our story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/contacto/">Contacto</a>
+          <a class="nav-link" href="https://www.inferia.io/contacto/">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn text-light" href="https://www.inferia.io/solicitar_datos">Solicitar datos</a>
+          <a class="nav-link btn text-light" href="https://www.inferia.io/solicitar_datos">Request Data</a>
         </li>
       </ul>
     </div>

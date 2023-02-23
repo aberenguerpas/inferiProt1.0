@@ -111,7 +111,7 @@
 
 <template>
     <div v-if="info.results" class="container " >
-        <BreadCrumbs :list="['Búsqueda', `${info.results.title.slice(0,15)+'...'}`]"/>
+        <BreadCrumbs :list="['Search', `${info.results.title.slice(0,15)+'...'}`]"/>
         <div class="row mt-5" >
             <div class="col-lg-10 col-12 ">
                 <div class="d-flex title-img">
@@ -137,7 +137,7 @@
                 <!--first row -->
                 <div class="row mt-4 mx-auto">
                     <div class="col-12 col-lg-11 px-1"> <!--I have put col-lg-10 to make all cols 90% in big screens-->
-                        <h5 class="mx-auto fw-bold fs-4"> Descripción</h5>
+                        <h5 class="mx-auto fw-bold fs-4"> Description</h5>
                         <div class="mt-4 description">
                             <p> {{ cuttedDescription }}</p>
                         </div>
@@ -150,7 +150,7 @@
                 <!--third-->
                 <div class="row mt-4 mx-auto ">
                     <div class="col-12 col-lg-11  px-1">
-                        <h5 class="mx-auto  fw-bold fs-4"> Recursos</h5>
+                        <h5 class="mx-auto  fw-bold fs-4"> Resources</h5>
                         <Acordeon :data="info.resources"/>
                     </div>
                 </div>

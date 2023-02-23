@@ -20,7 +20,7 @@ const props = defineProps(['sample'])
     </div>
 
     <div v-else>
-        <p class="description ">Vista previa no disponible</p>
+        <p class="description ">Preview is not available.</p>
     </div>
 
 </template>
