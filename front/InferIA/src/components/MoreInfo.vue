@@ -66,19 +66,19 @@ geo()
 
 <template>
    <div class="border border-primary-subtle plus_info pb-4">
-        <h6 class="fw-bold mt-3"> Precio </h6>
-        <h6 class="fw-bold green ms-2" :class="{ free: isFree, pay: !isFree}" > Gratis</h6>
-        <h6 class="fw-bold mt-3">  Licencia </h6>
+        <h6 class="fw-bold mt-3"> Price</h6>
+        <h6 class="fw-bold green ms-2" :class="{ free: isFree, pay: !isFree}" > Free</h6>
+        <h6 class="fw-bold mt-3">  License </h6>
         <a :href="data.license" class="ms-2">  {{  data.license }}</a>
-        <h6 class="fw-bold mt-3">Fuente</h6>
+        <h6 class="fw-bold mt-3">Source</h6>
         <a :href="`https://${data.provider}`" class="ms-2"> {{ data.provider }}</a>
-        <h6 class="fw-bold mt-3"> Publicado</h6>
+        <h6 class="fw-bold mt-3"> Issued</h6>
         <p class="ms-2">{{ issued || "---"}} </p>
-        <h6 class="fw-bold mt-3">Última modificación</h6>
+        <h6 class="fw-bold mt-3">Last modified</h6>
         <p class="ms-2"> {{  lastModified || "---" }}</p>
-        <h6 class=" fw-bold mt-3">Cobertura temporal</h6>
+        <h6 class=" fw-bold mt-3">Temporal coverage</h6>
         <p class="ms-2">{{ time || '---'}}</p>
-        <h6 class="fw-bold mt-3"> Cobertura geográfica </h6>
+        <h6 class="fw-bold mt-3"> Geographic coverage </h6>
         <ul class="ms-2 " v-if="all">
             <li v-for="place in geoContent"> {{ place}} </li>
         </ul>

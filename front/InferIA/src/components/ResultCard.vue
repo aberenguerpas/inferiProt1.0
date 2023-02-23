@@ -19,8 +19,8 @@ const props = defineProps(['data'])
                     <h5 class="card-title mb-0 fw-bold">{{ data.title }}</h5>
                     <ul class="list-group list-group-horizontal">
                         <li class="list-group-item"><i class="bi bi-file-earmark-ruled"></i> CSV</li>
-                        <li class="list-group-item"><i class="bi bi-patch-check"></i> <a :href="data['license']">Licencia</a></li>
-                        <li class="list-group-item free"><i class="bi bi-cash"></i> Gratis</li>
+                        <li class="list-group-item"><i class="bi bi-patch-check"></i> <a :href="data['license']">License</a></li>
+                        <li class="list-group-item free"><i class="bi bi-cash"></i> Free</li>
                     </ul>
                     <p class="mt-2 card-text text-secondary"> {{ data.description }}</p>
                 </div>

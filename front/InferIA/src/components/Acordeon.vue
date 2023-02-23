@@ -39,8 +39,8 @@ isSizeNull()
         <div  v-for="res in data"  class="w-90 collapse show" :class="`ob${index}`" >
             <div class="card-body p-3 " v-if="res.mediaType === item" >
                 <h6 class="card-title">{{ res.name }}</h6>
-                <h6 class="card-subtitle mb-1 mt-1 text-muted">Tamaño   {{ res.size }} </h6>
-                <a :href="res.downloadUrl" class="btn btn-primary mt-2 rounded-pill" >Descargar</a>
+                <h6 class="card-subtitle mb-1 mt-1 text-muted">Size   {{ res.size }} </h6>
+                <a :href="res.downloadUrl" class="btn btn-primary mt-2 rounded-pill" >Download</a>
             </div>
         </div>
         </div>
