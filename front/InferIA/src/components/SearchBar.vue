@@ -46,13 +46,12 @@ async function onEnter(){
 <template>
 <form id="searchBox" @submit.prevent="onEnter">
   <i class="bi bi-search lupa"></i>
-  <input placeholder="Search" id="textInput" autocomplete="off" class="">
+  <input placeholder="Search" id="textInput" autocomplete="off" class="searchBar">
 </form>
 </template>
 
 <style>
-    input{
-        
+    .searchBar{
         padding: 1em;
         border-radius: 2em;
         width: 100%;

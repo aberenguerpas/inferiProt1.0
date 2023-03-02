@@ -4,6 +4,7 @@ import ResultCardVue from '../components/ResultCard.vue';
 import DataFormVue from '../components/DataForm.vue';
 import LoadCompVue from '../components/LoaderComp.vue';
 import BreadCrumbs from '../components/BreadCrumbs.vue';
+import AdvancedSearch from '../components/AdvancedSearch.vue';
 import { ref } from 'vue';
 
 const results = ref([])
@@ -21,7 +22,10 @@ const results = ref([])
       </div>
       
       <div class="row">
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-3">
+          <AdvancedSearch/>
+        </div>
+        <div class="col-12 col-lg-6">
           <div v-if="results['results']==0" class="text-center m-5">
             <h5 class="fw-bold fs-4"> Ups! We haven't found anything!</h5>
             <p class="mt-3 text-center">Don't worry, we get can get it for you!<br> Let us know what you need clicking <a href="https://www.inferia.io/solicitar_datos">here.</a></p>
@@ -35,7 +39,7 @@ const results = ref([])
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-3 col-12">
           <DataFormVue/>
         </div>
       </div>
