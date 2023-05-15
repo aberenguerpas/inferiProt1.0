@@ -14,7 +14,7 @@ services:
     build: ./services/translate/
     restart: always
     ports: 
-      - 8000:8000
+      - 8001:8001
   redis:
     image: redis:latest
     restart: always

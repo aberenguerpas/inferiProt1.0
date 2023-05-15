@@ -1,5 +1,5 @@
 FROM python:3.10
-COPY . .
+COPY ./requirements .
 RUN pip install --upgrade pip
 RUN pip install torch
 RUN pip install -r requirements.txt
@@ -9,8 +9,8 @@ RUN apt-get clean
 RUN apt-get -y update
 RUN apt-get install -y cron
 RUN pip install opendatacrawler
-
-#ADD crontab /etc/cron.d/my-cron-file
-#RUN chmod 0644 /etc/cron.d/my-cron-file
-#RUN crontab /etc/cron.d/my-cron-file
-#ENTRYPOINT ["cron", "-f"]
+COPY . .
+ADD crontab /etc/cron.d/my-cron-file
+RUN chmod 0644 /etc/cron.d/my-cron-file
+RUN crontab /etc/cron.d/my-cron-file
+ENTRYPOINT ["cron", "-f"]
