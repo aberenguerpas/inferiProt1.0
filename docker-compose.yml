@@ -1,0 +1,31 @@
+services:
+  embeddings:
+    build: ./services/embeddings/
+    restart: always
+    ports: 
+      - 5000:5000
+    volumes:
+      - faiss:/index_data
+  indexation:
+    build: ./services/indexation/
+    #restart: always
+
+  translate:
+    build: ./services/translate/
+    restart: always
+    ports: 
+      - 8000:8000
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:
+    driver: local
+  faiss:
+    driver: local

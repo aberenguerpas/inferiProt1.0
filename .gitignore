@@ -2,11 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
-
+.vscode/*
+services/indexation/logs/*
 data/
 env/
-
+.env
 .DS_Store
 
 config.ini

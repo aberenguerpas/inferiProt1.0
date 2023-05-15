@@ -1,14 +1,17 @@
-from elasticsearch import Elasticsearch
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from opensearchpy import OpenSearch, RequestsHttpConnection
 import configparser
+import uvicorn
+import requests
+from lingua import Language, LanguageDetectorBuilder
+
 
 config = configparser.ConfigParser()
 config.read("./config.ini")
 
 host = 'search-server-search-sn3tyevnqczq4x7z7prx7aeq2m.eu-west-3.es.amazonaws.com'
-region= 'eu-west-3'
+region = 'eu-west-3'
 
 username = config['credentials']['username']
 password = config['credentials']['password']
@@ -25,6 +28,9 @@ client = OpenSearch(
 
 app = FastAPI()
 
+languages = [Language.ENGLISH, Language.SPANISH]
+detector = LanguageDetectorBuilder.from_languages(*languages).build()
+
 origins = ["*"]
 
 app.add_middleware(
@@ -35,20 +41,34 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/details")
+@app.get("/details/")
 async def search(id):
-
-    resp = client.search(index="search-v1", body={"query":{"terms": {"_id": [id]}}})
+    resp = client.search(index="search-test", body={"query":{"terms": {"_id": [id]}}})
 
     result = resp['hits']['hits'][0]['_source']
 
     return {"results": result}
 
-@app.get("/search-test")
-async def searchTest(keywords:str):
-    resp = client.search(index="search-v1", size=1000, body={"query":{
+
+@app.post("/search-table/")
+async def searchTable(data: Request):
+
+    url = 'http://localhost:5000/search'
+    x = requests.post(url, json = await data.json())
+    return x.json()
+
+
+@app.get("/search/")
+async def search(keywords:str):
+    lang = detector.detect_language_of(keywords)
+    query_lang = 'es'
+
+    if lang == Language.ENGLISH:
+        query_lang = 'en'
+
+    resp = client.search(index="search-test", size=1000, body={"query":{
         "match": {
-            "title": {
+            "title_"+query_lang: {
                 "query": keywords,
                 "fuzziness": "auto"
                 }
@@ -65,3 +85,7 @@ async def searchTest(keywords:str):
         result.append(data)
 
     return {"results": result, "total": total}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=6000, reload=True)

@@ -1,0 +1,54 @@
+[{
+    "mappings":{
+        "properties": {
+            "identifier": {"type": "text", "analyzer": "standard"},
+            "title_es": {
+                "type": "text",
+                "analyzer": "spanish"
+            },
+            "title_en": {
+                "type": "text",
+                "analyzer": "english"
+            },
+            "img_portal": {"type": "text", "analyzer": "standard"},
+            "description_es": {
+                "type": "text",
+                "analyzer": "spanish"
+            },
+            "description_en": {
+                "type": "text",
+                "analyzer": "english"
+            },
+            "language": {"type": "keyword"},
+            "theme": {"type": "keyword"},
+            "resources": {
+                "type": "nested",
+                "properties": {
+                    "name": {"type": "text"},
+                    "donwloadUrl": {"type": "text"},
+                    "mediaType": {"type": "text"},
+                    "size": {"type": "integer"}
+                }
+            },
+            "issued": {"type": "date", "format" : "strict_date_optional_time||epoch_millis"},
+            "modified": {"type": "date", "format" : "strict_date_optional_time||epoch_millis"},
+            "license": {"type": "text", "analyzer": "standard"},
+            "source": {"type": "text", "analyzer": "standard"},
+            "source_name": {"type": "text", "analyzer": "standard"},
+            "temporal_coverage": {
+                "properties": {
+                        "start_date": {
+                            "type": "date",
+                            "format" : "strict_date_optional_time||epoch_millis"
+                        },
+                        "end_date": {
+                            "type": "date",
+                            "format" : "strict_date_optional_time||epoch_millis"
+                        }
+                    }
+                },
+            "spatial_coverage": {"type": "text", "analyzer": "standard"},
+            "sample": {"type": "text"}
+        }
+    }
+}]

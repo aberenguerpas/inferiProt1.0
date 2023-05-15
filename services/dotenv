@@ -1,0 +1,15 @@
+
+ENVIRONMENT = test
+DATA_PATH = data
+PORTALS_PATH = /portals.json
+
+# Redis
+HOST_REDIS = inferiprot10-redis-1 # localhost
+
+# Embeddings
+HOST_EMB = inferiprot10-embeddings-1   # localhost host.docker.internal
+# ElasticSearch
+OPENSEARCH_HOST = <HOST>
+OPENSEARCH_INDEX = search-v1 #search-test 
+OPENSEARCH_USERNAME = <USER>
+OPENSEARCH_PASS = <PASSS>
