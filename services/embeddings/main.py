@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 
 load_dotenv('.env')
 HOST_EMB = os.getenv('HOST_EMB')
-HOST_REDIS = os.getenv('HOST_REDIS ')
+HOST_REDIS = os.getenv('HOST_REDIS')
 OPENSEARCH_INDEX = os.getenv('OPENSEARCH_INDEX')
 
 def checkGPU():
