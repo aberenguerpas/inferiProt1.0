@@ -1,5 +1,5 @@
 FROM python:3.10
-COPY ./requirements .
+COPY ./requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install torch
 RUN pip install -r requirements.txt
