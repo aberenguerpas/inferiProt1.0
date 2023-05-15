@@ -57,7 +57,7 @@ def translate(text, lng):
         "input_text": text,
         "target_lang": lng
     }
-    response = requests.post('http://inferiprot10-translate-1:8000/translate/', json=data)
+    response = requests.post('http://inferiprot10-translate-1:8001/translate/', json=data)
     if response.status_code == 200:
         return response.json()['response']
     else:
