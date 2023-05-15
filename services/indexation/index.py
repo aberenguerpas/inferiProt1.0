@@ -13,7 +13,6 @@ load_dotenv('.env')
 DATA_PATH = os.getenv('DATA_PATH')
 HOST_REDIS = os.getenv('HOST_REDIS')
 PORTALS_PATH = os.getenv('PORTALS_PATH')
-print(HOST_REDIS)
 
 def main():
     #  Read portals list
