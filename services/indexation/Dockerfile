@@ -8,9 +8,12 @@ RUN chmod 1777 /tmp
 RUN apt-get clean
 RUN apt-get -y update
 RUN apt-get install -y cron
-RUN pip install opendatacrawler
+
 COPY . .
 ADD crontab /etc/cron.d/my-cron-file
 RUN chmod 0644 /etc/cron.d/my-cron-file
 RUN crontab /etc/cron.d/my-cron-file
-ENTRYPOINT ["cron", "-f"]
+#ENTRYPOINT ["cron", "-f"]
+#RUN mkdir data
+RUN pip install opendatacrawler
+CMD ["python3","fastIndex.py"]

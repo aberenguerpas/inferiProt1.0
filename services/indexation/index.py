@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv('.env')
 
-# CONSTANTS
+# CONSTANTE2
+
 DATA_PATH = os.getenv('DATA_PATH')
 HOST_REDIS = os.getenv('HOST_REDIS')
 PORTALS_PATH = os.getenv('PORTALS_PATH')

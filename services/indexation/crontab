@@ -1,1 +1,1 @@
-57 17 * * * /usr/local/bin/python /index.py >> cron_log 2>&1
+57 17 10 10 * /usr/local/bin/python /index.py >> cron_log 2>&1

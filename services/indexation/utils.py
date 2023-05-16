@@ -51,13 +51,28 @@ def downloadMetaAndData(domain, id):
         while proc.poll() is None:
             pass
 
+def downloadPortalData(domain):
+    python_path = '/usr/local/bin/python'
+    if ENVIRONMENT == 'test':
+        python_path = 'python'
+    with subprocess.Popen([python_path,
+                           '-m',
+                           'opendatacrawler',
+                           '-d', domain, '-pd', '-t','csv','-m',
+                           '-id', id, '-p', 'data'],
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.STDOUT
+                            ) as proc:
+        while proc.poll() is None:
+            pass
+
 
 def translate(text, lng):
     data = {
         "input_text": text,
         "target_lang": lng
     }
-    response = requests.post('http://inferiprot10-translate-1:8001/translate/', json=data)
+    response = requests.post('http://localhost:8001/translate/', json=data)
     if response.status_code == 200:
         return response.json()['response']
     else:
@@ -102,7 +117,7 @@ def initOpenSearch():
     )
 
     if not client.indices.exists(OPENSEARCH_INDEX):
-        client.indices.delete(index=OPENSEARCH_INDEX)
+        #client.indices.delete(index=OPENSEARCH_INDEX)
 
         f = open(os.path.dirname(__file__)+'/schema.json')
         body = json.load(f)
@@ -125,6 +140,10 @@ def indexOpenSearch(client, meta, df, portal):
     title_trans = translate(meta['title'], 'en')
     desc_trans = translate(meta['description'], 'en')
 
+    issued = None
+    modified = None
+
+
     doc = {
         "identifier": meta['id_portal'],
         "title_en": title_trans,
@@ -137,8 +156,8 @@ def indexOpenSearch(client, meta, df, portal):
         "language": portal['language'],
         "theme": meta['theme'],
         "resources": meta['resources'],
-        "issued": meta.get('issued', None),
-        "modified": meta.get('modified', None),
+        "issued": issued,
+        "modified": modified,
         "license": meta.get('license', None),
         "provider": portal['url'],
         "temporal": meta.get('temporal', None),
