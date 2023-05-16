@@ -1,5 +1,4 @@
 import os
-import glob
 import json
 import pandas as pd
 from tqdm import tqdm
@@ -16,6 +15,7 @@ def main():
     #  Read portals list
     f = open(os.path.dirname(__file__)+ PORTALS_PATH)
     portals = json.load(f)
+
 
     # Init OpenSearch client
     open_client = initOpenSearch()
@@ -64,7 +64,6 @@ def main():
                             break
             except Exception as e:
                 print(e)
-
         saveIndexFaiss()
 
 

@@ -6,8 +6,8 @@ services:
       - 5000:5000
     volumes:
       - faiss:/index_data
-  indexation:
-    build: ./services/indexation/
+#  indexation:
+#    build: ./services/indexation/
     #restart: always
 
   translate:
