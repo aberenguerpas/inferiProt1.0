@@ -87,7 +87,7 @@ async def getEmbeddings(request: Request):
     faiss.normalize_L2(emb_headers)
 
     D, I = header_index.search(emb_headers, k)  # search
-
+    print(I)
     dics_headers = []
     for i, index_header in enumerate(I):
         aux = {}
