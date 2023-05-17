@@ -87,7 +87,6 @@ async def getEmbeddings(request: Request):
     faiss.normalize_L2(emb_headers)
 
     D, I = header_index.search(emb_headers, k)  # search
-    print(I)
 
     dics_headers = []
     for i, index_header in enumerate(I):
@@ -146,28 +145,31 @@ async def getEmbeddings(request: Request):
 
 @app.post("/index/")
 async def indexDataset(request: Request):
-    response = await request.json()
-    table = pd.read_json(response['data'], orient='split')
-    headers = cleanHeaders(table)
-    content = cleanContent(table)
+    try:
+        response = await request.json()
+        table = pd.read_json(response['data'], orient='split')
+        headers = cleanHeaders(table)
+        content = cleanContent(table)
 
-    headers_emb = model.getEmbedding(headers)
-    content_emb = model.getEmbedding(content)
+        headers_emb = model.getEmbedding(headers)
+        content_emb = model.getEmbedding(content)
 
-    faiss.normalize_L2(headers_emb)
-    faiss.normalize_L2(content_emb)
+        faiss.normalize_L2(headers_emb)
+        faiss.normalize_L2(content_emb)
 
-    for emb in headers_emb:
-        id = header_index.ntotal + 1
-        header_index.add_with_ids(np.array([emb]), id)
-        r_headers.set(str(id), response['id'])
+        for emb in headers_emb:
+            id = header_index.ntotal + 1
+            header_index.add_with_ids(np.array([emb]), id)
+            r_headers.set(str(id), response['id'])
 
-    for emb in content_emb:
-        id = content_index.ntotal + 1
-        content_index.add_with_ids(np.array([emb]), id)
-        r_content.set(str(id), response['id'])
+        for emb in content_emb:
+            id = content_index.ntotal + 1
+            content_index.add_with_ids(np.array([emb]), id)
+            r_content.set(str(id), response['id'])
 
-    return {'index': 'ok'}
+        return {'index': 'ok'}
+    except Exception:
+        return {'index': 'bad'}
 
 
 @app.get("/saveIndexes/")
