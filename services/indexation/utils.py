@@ -103,6 +103,8 @@ def saveIndexFaiss():
     response = requests.get('http://'+HOST_EMB+':5000/saveIndexes/')
     if response.status_code == 200:
         return response.json()
+    else:
+        return {'index': 'bad'}
 
 
 def initOpenSearch():
@@ -137,8 +139,8 @@ def indexOpenSearch(client, meta, df, portal):
         df = df.sample(n=20)
     sample = df.to_json(orient="split")
 
-    title_trans = translate(meta['title'], 'en')
-    desc_trans = translate(meta['description'], 'en')
+    title_trans = None #translate(meta['title'], 'en')
+    desc_trans = None #translate(meta['description'], 'en')
 
     issued = None
     modified = None

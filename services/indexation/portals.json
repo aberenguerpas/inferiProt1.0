@@ -1,4 +1,12 @@
 [
+    {
+        "name": "Datos.gob.es",
+        "url":"https://datos.gob.es/",
+        "portal":"https://datos.gob.es/",
+        "img":"https://datos.gob.es/sites/default/files/datosgobes/logo_datos_abiertos.jpg",
+        "spatial_coverage": "Spain",
+        "language":"es"
+    },
 {
     "name": "INE",
     "url":"https://ine.es/",
@@ -7,19 +15,12 @@
     "spatial_coverage": "Spain",
     "language":"es"
 },
-    {
-        "name": "Dades Obertes Generalitat Valenciana",
-        "url":"https://dadesobertes.gva.es/",
-        "portal":"https://dadesobertes.gva.es/",
-        "img":"https://presidencia.gva.es/estatico/identitat-gva/assets/img/pantalla-1.svg",
-        "spatial_coverage": "Comunidad Valenciana",
-        "language":"es"
-    },
 {
-    "name": "Datos.gob.es",
-    "url":"https://datos.gob.es/",
-    "portal":"https://datos.gob.es/",
-    "img":"https://datos.gob.es/sites/default/files/datosgobes/logo_datos_abiertos.jpg",
-    "spatial_coverage": "Spain",
+    "name": "Dades Obertes Generalitat Valenciana",
+    "url":"https://dadesobertes.gva.es/",
+    "portal":"https://dadesobertes.gva.es/",
+    "img":"https://presidencia.gva.es/estatico/identitat-gva/assets/img/pantalla-1.svg",
+    "spatial_coverage": "Comunidad Valenciana",
     "language":"es"
-}]
+}
+ ]

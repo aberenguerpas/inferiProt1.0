@@ -5,7 +5,7 @@ import configparser
 import uvicorn
 import requests
 from lingua import Language, LanguageDetectorBuilder
-
+import json
 
 config = configparser.ConfigParser()
 config.read("./config.ini")
@@ -40,6 +40,29 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/tags/")
+async def tags(tags:str):   
+    tags = ['{"term":{"title":"'+t+'"}}' for t in tags.split(",")]
+    body = """{
+        "query":{
+                    "bool": {
+                    "should": ["""+ ",".join(tags) + """]
+                    }
+                }
+        }"""
+    resp = client.search(index="search-v1", size=200, body=body)
+    result = []
+    total = resp['hits']['total']['value']
+
+    for hit in resp['hits']['hits']:
+        data = hit['_source']
+        data['id'] = hit['_id']
+
+        result.append(data)
+
+    return {"results": result, "total": total}
+
 
 @app.get("/details/")
 async def search(id):

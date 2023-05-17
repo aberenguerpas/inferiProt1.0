@@ -80,7 +80,7 @@ async def getEmbeddings(request: Request):
     ids = [o['_id'] for o in resp['hits']['hits']]
 
     # Search config
-    k = 100
+    k = 200
     alpha = 0.65
     # Headers
     emb_headers = model.getEmbedding(response['headers'])
@@ -88,6 +88,7 @@ async def getEmbeddings(request: Request):
 
     D, I = header_index.search(emb_headers, k)  # search
     print(I)
+
     dics_headers = []
     for i, index_header in enumerate(I):
         aux = {}
@@ -137,8 +138,10 @@ async def getEmbeddings(request: Request):
 
         response = s.execute()
         response[0]._d_['score'] = round(val, 2)
+        response[0]._d_['id'] = response[0].meta.id
+
         results.append(response[0]._d_)
-    return {'results': results}
+    return {'results': results, 'total':len(results)}
 
 
 @app.post("/index/")
