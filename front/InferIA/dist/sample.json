@@ -1,0 +1,81 @@
+{
+    "identifier": "a01002820-academias-andaluzas",
+    "title": "Registro de contratos de Organismo Autonomo Local Euskaltegi Municipal de Galdakao del 2022",
+    "description": "Información de las academias que forman parte del Instituto de Academias de Andalucía. El conjunto de datos recoge el nombre, localidad, provincia, datos de contacto, fecha y normas de creación y estatutos de cada una de ellas.",
+    "theme": ["educacion", "andalucia"],
+    "resources": [
+        {
+            "name": "CSV - Academias andaluzas",
+            "downloadUrl": "https://www.juntadeandalucia.es/datosabiertos/portal/dataset/f3973f41-f4d0-4b58-a5fe-a7010b473003/resource/9101f6e6-d932-455a-ac62-dcac789f297f/download/dataset_academias_andaluzas.csv",
+            "mediaType": "text/csv",
+            "size": 13088888888
+        },
+        {
+            "name": "XLS - Academias andaluzas",
+            "downloadUrl": "https://www.juntadeandalucia.es/datosabiertos/portal/dataset/f3973f41-f4d0-4b58-a5fe-a7010b473003/resource/11d6fd47-1128-4bae-9887-ed2bc7bfbc6d/download/dataset_academias_andaluzas.xls",
+            "mediaType": "application/vnd.ms-excel",
+            "size": 1380048
+        }
+    ],
+    "modified": "jue, 08 sep 2022 07:39:55 GMT+0000",
+    "license": "http://creativecommons.org/licenses/by/4.0/deed.es_ES",
+    "source": "https://datos.gob.es/es",
+    
+    "price": "0",
+    "n_rows":"900",
+    "sample": {
+        "cdasdasdasdasdaol":["1","2","3","5","6","7","8","9"],
+        "col2":["1","2","3","5","6","7","8","9"],
+        "col3":["1","2","3","5","6","7","8","9"],
+        "col4":["1","2","3","5","6","7","8","9"],
+        "col5":["1","2","3","5","6","7","8","9"],
+        "co3l2":["1","2","3","5","6","7","8","9"],
+        "col22":["1","2","3","5","6","7","8","9"],
+        "col32":["1","2","3","5","6","7","8","9"],
+        "col24":["1","2","3","5","6","7","8","9"],
+        "col25":["1","2","3","5","6","7","8","9"],
+        "co3l3":["1","2","3","5","6","7","8","9"],
+        "col23":["1","2","3","5","6","7","8","9"],
+        "col33":["1","2","3","5","6","7","8","9"],
+        "col34":["1","2","3","5","6","7","8","9"],
+        "col15":["1","2","3","5","6","7","8","9"],
+        "co1l":["1","2","3","5","6","7","8","9"],
+        "co2l32":["1","2","3","5","6","7","8","9"],
+        "co2l33":["1","2","3","5","6","7","8","9"],
+        "co3l4":["1","2","3","5","6","7","8","9"],
+        "co2l25":["1","2","3","5","6","7","8","9"],
+        "c2ol":["1","2","3","5","6","7","8","9"],
+        "co2l2":["1","2","3","5","6","7","8","9"],
+        "co2l3":["1","2","3","5","6","7","8","9"],
+        "col314":["1","2","3","5","6","7","8","9"],
+        "co1l5":["1","2","3","5","6","7","8","9"],
+        "co11l":["1","2","3","5","6","7","8","9"],
+        "co1l2":["1","2","3","5","6","7","8","9"],
+        "c1ol3":["1","2","3","5","6","7","8","9"],
+        "col14":["1","2","3","5","6","7","8","9"],
+        "co13l5":["1","2","3","5","6","7","8","9"]
+    },
+    "geo_coverage":"Andalucía",
+    "temporal_coverage":"Desde 01/01/2021 - 0:00 (UTC+01:00) hasta 31/12/2021 - 0:00 (UTC+01:00)",
+    "comb":[{
+        "title": "Registro de contratos de Organismo Autonomo Local Euskaltegi Municipal de Galdakao del 2022",
+        "description": "Información de las academias que forman parte del Instituto de Academias de Andalucía. El conjunto de datos recoge el nombre, localidad, provincia, datos de contacto, fecha y normas de creación y estatutos de cada una de ellas.",
+        "theme": ["educacion", "andalucia"],
+        "compatibility":95,
+        "cols": [{"col4":85},{"col00":55},{"coloo":34},{"colpo":9}] 
+         },
+         {
+        "title": "Registro de contratos de Organismo Autonomo Local Euskaltegi Municipal de Galdakao del 2022 ",
+        "description": "Información de las academias que forman parte del Instituto de Academias de Andalucía. El conjunto de datos recoge el nombre, localidad, provincia, datos de contacto, fecha y normas de creación y estatutos de cada una de ellas.",
+        "theme": ["educacion", "andalucia"],
+        "compatibility":95,
+        "cols": [{"col4":85},{"col00":55},{"coloo":34},{"colpo":9}] 
+        },
+        {
+        "title": "Registro de contratos de Organismo Autonomo Local Euskaltegi Municipal de Galdakao del 2022",
+        "description": "Información de las academias que forman parte del Instituto de Academias de Andalucía. El conjunto de datos recoge el nombre, localidad, provincia, datos de contacto, fecha y normas de creación y estatutos de cada una de ellas.",
+        "theme": ["educacion", "andalucia"],
+        "compatibility":95,
+        "cols": [{"col4":85},{"col00":55},{"coloo":34},{"colpo":9}] 
+        }]
+}
