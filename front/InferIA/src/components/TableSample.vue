@@ -4,9 +4,9 @@ const props = defineProps(['sample'])
 
 
 <template>
-    <div v-if="sample" class="table-container" >
+    <div v-if="sample" class="table-container " >
         <table class="table table-striped">
-            <thead class="text-light">
+            <thead class="text-light py-1">
                 <tr class="stiky-header">
                 <th v-for="item in props.sample.columns" > {{ item }}</th>
                 </tr>
@@ -43,7 +43,10 @@ tr.stiky-header {
     background: #06283d;
 }
 
-
+.table>:not(caption)>*>* {
+    padding: 0.9rem 0.9rem;
+    
+}
 
 @media only screen and (max-width: 600px){
     .table-container::-webkit-scrollbar {

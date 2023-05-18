@@ -2,6 +2,7 @@
 import { RouterLink } from "vue-router";
 
 const props = defineProps(['data'])
+console.log('here', props.data)
 
 </script>
 
@@ -12,10 +13,10 @@ const props = defineProps(['data'])
     <div class="container card" >
         <div class="row" >
             <div class="col-2 img-col">
-                <img src="../assets/img/datos.gob.jpg" class="me-3" height="100" width="100">
+                <img :src="data.img_portal" class="" height="100" width="100">
             </div>
            <div class="col-lg-10 col-12">
-                <div class="card-body">
+                <div class="card-body mt-1">
                     <h5 class="card-title mb-0 fw-bold">{{ data.title }}</h5>
                     <ul class="list-group list-group-horizontal">
                         <li class="list-group-item"><i class="bi bi-file-earmark-ruled"></i> CSV</li>
@@ -43,8 +44,6 @@ const props = defineProps(['data'])
         padding: 1em;
         text-align: left;
         height: 180px;
-        width: 50rem;
-        
     }
     .card-title {
         display: -webkit-box;
@@ -66,7 +65,8 @@ const props = defineProps(['data'])
     }
 
     img{
-        border-radius: 15px;
+        border-radius: 2px;
+        object-fit: contain;
     }
     
     .list-group-item{
@@ -92,7 +92,7 @@ const props = defineProps(['data'])
     @media only screen and (max-width: 600px) {
 
         .card{
-            width: 22rem;
+            width: 21rem;
         }
 
         .img-col{
