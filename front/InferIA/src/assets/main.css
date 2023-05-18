@@ -1,7 +1,6 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   font-weight: normal;
 }
@@ -11,6 +10,10 @@ a,
   text-decoration: none;
   color: #47b5ff;
   transition: 0.4s;
+}
+
+.bi{
+  cursor: pointer
 }
 
 .free{
@@ -30,6 +33,11 @@ a,
   border-color: #47b5ff;
   font-size: 17px;
 }
+
+.btn-sm{
+  font-size: 12px;
+}
+
 
 a{
   font-size: 17px;

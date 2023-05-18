@@ -1,16 +1,18 @@
 <script setup>
 import headerCompVue from './components/HeaderComp.vue';
 import {  RouterView } from 'vue-router';
-
+import FooterComp from './components/FooterComp.vue';
 </script>
 
 <template>
-  <div>
-  <main>
-    <headerCompVue/>
-  </main>
-  <RouterView />
-</div>
+    <div>
+    <main>
+      <headerCompVue/>
+    </main>
+    <RouterView />
+    
+  </div>
+  <FooterComp/>
 </template>
 
 <style scoped>
@@ -20,11 +22,6 @@ import {  RouterView } from 'vue-router';
   font-family: 'Poppins', sans-serif;
 }
 
-.container{
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0;
-}
 
 @media only screen and (max-width: 992px) {
 

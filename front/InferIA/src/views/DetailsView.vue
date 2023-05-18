@@ -23,14 +23,17 @@
 
 
     const getData = async () =>{
+
         try{
-            const res = await fetch(`http://inferia.io/api/details?id=${route.params.id}`)
+            const res = await fetch(`http://inferia.io/api/details/?id=${route.params.id}`,
+            { headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},})
             const jsonResponse = await res.json()
             info.value = jsonResponse
             addSizeFormat()
             themesFormated()
             cutDescription()
             getSample()
+            console.log(info.value)
         }catch(error){
             console.log(error)
         }
@@ -115,7 +118,7 @@
         <div class="row mt-5" >
             <div class="col-lg-10 col-12 ">
                 <div class="d-flex title-img">
-                    <img src="../assets/img/datos.gob.jpg" height="100" width="100">
+                    <img :src="info.results.img_portal" height="100" width="100">
                     <div class="ms-3">
                         <h1 class="mt-1 text-break fw-bold"> {{ info.results.title }} </h1>
                         <span @click="goToTheme" class="btn btn-primary text-capitalize me-2" v-for="theme in info.results.theme">{{ theme }}</span>
@@ -276,7 +279,7 @@
 }
 
 img{
-    border-radius: 15px;
+    object-fit: contain;
 }
 
 h6.fw-bold.badge.border.border-light-subtle.free {

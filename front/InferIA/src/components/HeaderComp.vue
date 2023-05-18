@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light">
 
     <a class="navbar-brand" href="https://www.inferia.io/"> <img src="../assets/img/Inferia_negativo.png" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,16 +11,16 @@
           <a class="nav-link active" aria-current="page" href="https://www.inferia.io/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/vende_tus_datos/">Sell your data</a>
+          <a class="nav-link" href="https://www.inferia.io/sell-data/">Sell your data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/nuestra-historia/">Our story</a>
+          <a class="nav-link" href="https://www.inferia.io/our-history/">Our story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/contacto/">Contact</a>
+          <a class="nav-link" href="https://www.inferia.io/contact/">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn text-light" href="https://www.inferia.io/solicitar_datos">Request Data</a>
+          <a class="nav-link btn text-light" href="https://www.inferia.io/request-data">Request Data</a>
         </li>
       </ul>
     </div>
@@ -30,7 +30,7 @@
 
 <style scoped>
 nav{
-  background:#fff;
+  background: #fff !important;;
   height: 100px!important;
   max-width: 1280px!important;
   margin-left: auto;
@@ -39,6 +39,7 @@ nav{
   padding-right: 40px;
 
 }
+
 #navbarNav{
   
   margin-left: 1em;
