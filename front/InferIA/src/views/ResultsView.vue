@@ -4,70 +4,79 @@ import ResultCardVue from "../components/ResultCard.vue";
 import DataFormVue from "../components/DataForm.vue";
 import LoadCompVue from "../components/LoaderComp.vue";
 import BreadCrumbs from "../components/BreadCrumbs.vue";
-import AdvanceSearchModel from "../components/AdvanceSearchModel.vue";
-import PromotedBtn from "../components/PromotedBtn.vue";
+import IconFaceVue from "../components/icons/IconFace.vue";
+import AdvanceSearchModel from "../components/AdvanceSearchModel.vue"
 //STORES from pinia
 import { storeToRefs } from "pinia";
 import { useAdvanceSearchStore } from "../store/AdvanceSearch";
-
 
 //pinia
 const store = useAdvanceSearchStore();
 const { results } = storeToRefs(store);
 
-const tags = {  //data of the three promoted buttons
+const tags = {
+  //data of the three promoted buttons
   energy: {
-    tags: 'energía,energética,contaminantes',
-    title: 'Energy & Environment'
+    tags: "energía,energética,contaminantes",
+    title: "Energy & Environment",
   },
   economy: {
-    tags: 'empleo,trabajo,empresas,ayudas,locales',
-    title: "Business"
+    tags: "empleo,trabajo,empresas,ayudas,locales",
+    title: "Business",
   },
 
   development: {
-    tags: 'producción,consumo,reciclaje,basura,residuos,tráfico,materiales,material',
-    title: 'Circular Economy'
-  }
-}
+    tags: "producción,consumo,reciclaje,basura,residuos,tráfico,materiales,material",
+    title: "Circular Economy",
+  },
+};
 </script>
 
 <template>
-  <div class="container mb-5">
-    <div class="row">
-      <div class="col-12">
+  <div class="container lg:my-5 my-3 mx-auto lg:px-12 lg:mt-28 mt-28 min-h-screen">
+  
+      <div class="bg-white w-full lg:w-10/12 mx-auto">
         <BreadCrumbs :list="['Search']" />
-        <SearchBarVue/>
       </div>
-    </div>
 
-    <!--Promoted buttons-->
-    <div class="row">
-      <div class="col-12 col-lg-4">
-        <PromotedBtn :title="tags.energy.title" :tag="tags.energy.tags"/>
+      <div class="bg-white w-full lg:w-10/12 mx-auto my-3">
+        <SearchBarVue />
       </div>
-      <div class="col-12 col-lg-4">
-        <PromotedBtn :title="tags.economy.title" :tag="tags.economy.tags"/>
-      </div>
-      <div class="col-12 col-lg-4">
-        <PromotedBtn :title="tags.development.title" :tag="tags.development.tags"/>
-      </div>
-    </div>
+      <!--Results-->
 
-    <!--Results-->
-    <div class="row">
-      <div class="col-12 py-1"> 
-        <p> Results <span v-if="results && results['results']">{{ results['results'].length }}</span> </p>
+      <div class="my-6 mx-auto w-full lg:w-10/12 ">
+      
+          <p class="text-gray-400">
+            Results
+            <span v-if="results && results['results']">{{
+              results["results"].length
+            }}</span>
+          </p>
+        
+          <div class="w-full  mt-3">
+            <hr class="w-full">
+          </div>
+        
       </div>
-    </div>
+   
+
     <!--Results pintados-->
-    <div class="row">
-      <div class="col-12 col-lg-8">
+    <div class="lg:flex  min-w-0 lg:w-10/12 w-full mx-auto">
+    
+      <div class="w-full lg:w-9/12 mx-auto">
         <div
-          v-if="results && results['results'] && results['results'].length === 0"
-          class="text-center m-5"
+          v-if="
+            results && results['results'] && results['results'].length === 0
+          "
+          class="m-5 flex items-center justify-center flex-col"
         >
-          <h5 class="fw-bold fs-4">Ups! We haven't found anything!</h5>
+          <div class="py-3">
+            <IconFaceVue />
+          </div>
+          <h5 class="font-bold text-2xl text-center">
+            Ups! We haven't found anything!
+          </h5>
+
           <p class="mt-3 text-center">
             Don't worry, we get can get it for you!<br />
             Let us know what you need clicking
@@ -77,19 +86,27 @@ const tags = {  //data of the three promoted buttons
         <div v-else-if="results === 'loading'" class="text-center">
           <LoadCompVue />
         </div>
-        <div v-else>
-          <div v-for="todo in results['results']" :key="todo.title">
+        <div v-else class="">
+          <div class="lg:w-11/12 w-full min-w-0" v-for="todo in results['results']" :key="todo.title">
             <ResultCardVue :data="todo" />
           </div>
         </div>
       </div>
-  
-      <div class="col-12 col-lg-4">
+
+      <div class="w-full lg:w-3/12 bg-white my-8 lg:my-0 mx-auto flex flex-col items-center justify-center lg:block">
         <DataFormVue />
-        <AdvanceSearchModel />
+        <AdvanceSearchModel/>
       </div>
     </div>
   </div>
-  
 </template>
 
+<style scoped>
+.container {
+  font-family: "Ubuntu", sans-seri;
+}
+
+
+
+     
+</style>

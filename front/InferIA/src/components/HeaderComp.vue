@@ -1,95 +1,134 @@
+<script setup>
+import { ref } from "vue";
+import { RouterLink } from "vue-router";
+
+const open = ref(true);
+
+const toggle = () => {
+  open.value ? (open.value = false) : (open.value = true);
+  console.log(open.value);
+};
+</script>
+
 <template>
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light">
+  <nav
+    class="fixed top-0 z-50 flex items-center md:px-[40px] px-[20px] py-[25px] flex-wrap justify-between w-full h-24"
+  >
+    <a class="" href="https://www.inferia.io/">
+      <img src="../assets/img/Inferia_negativo.png" alt="Logo" />
+    </a>
 
-    <a class="navbar-brand" href="https://www.inferia.io/"> <img src="../assets/img/Inferia_negativo.png" alt="Logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://www.inferia.io/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/sell-data/">Sell your data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/our-history/">Our story</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.inferia.io/contact/">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn text-light" href="https://www.inferia.io/request-data">Request Data</a>
-        </li>
-      </ul>
+    <div class="block lg:hidden">
+      <button
+        @click="toggle"
+        class="flex items-center px-3 py-2 border rounded text-[#47b5ff] border-[#47b5ff] hover:text-white hover:border-white"
+      >
+        <svg
+          class="h-3 w-3"
+          viewBox="0 0 20 20"
+          fill="#47b5ff"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
     </div>
+    <div
+      class="w-full block flex-grow lg:flex lg:items-center lg:w-auto"
+      :class="{ burger: open }"
+    >
+      <div class="text-sm lg:flex-grow lg:flex lg:justify-end">
+        <a
+          href="https://www.inferia.io/"
+          class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
+        >
+          Home
+        </a>
+        <a
+          href="https://www.inferia.io/sell-data/"
+          class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
+        >
+          Sell Your Data
+        </a>
 
-</nav>
+        <RouterLink to="/useCases"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
+          Use Cases
+        </RouterLink>
+       
+        <RouterLink to="/providers"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
+          Providers
+        </RouterLink>
+
+        <a
+          href="https://www.inferia.io/our-history/"
+          class="block mt-4 lg:inline-block lg:mt-0 hover:text-[#47b5ff] text-gray-600 mr-5"
+        >
+          Our History
+        </a>
+        <a
+          href="https://www.inferia.io/blog/"
+          class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
+        >
+          Blog
+        </a>
+        <a
+          href="https://www.inferia.io/contact/"
+          class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
+        >
+          Contact
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://www.inferia.io/request-data/"
+          class="inline-block text-sm px-4 py-3 leading-none border rounded-full text-white border-white hover:border-transparent hover:text-teal-500 bg-[#06283d] mt-4 lg:mt-0"
+          >Request Data</a
+        >
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scoped>
-nav{
-  background: #fff !important;;
-  height: 100px!important;
-  max-width: 1280px!important;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-
+nav {
+  height: 90px !important;
+  box-shadow: 0px 5px 15px -4px rgba(0, 0, 0, 0.1);
+  font-family: "Ubuntu", sans-serif;
+  background-color: #fff !important;
 }
 
-#navbarNav{
-  
-  margin-left: 1em;
-  margin-right: 1em;
-}
-img{
-  width: 140px;
+a {
+  font-size: 15px;
 }
 
-.nav-item>.btn{
- line-height: 1em!important;
- border-radius: 2em;
- margin-top:1em;
- padding:1em;
- --bs-nav-link-padding-y:0!important;
-}
-.nav-link.active{
-  color: #47b5ff!important;;
+img {
+  width: 90px;
 }
 
-.nav-link{
-  padding-left: 20px!important;
-  padding-right: 20px!important;
-  line-height: 60px !important;;
-  color:#222222;
-  font-size:15px;
-}
-
-.navbar-collapse{
-  padding: 1em;
-  z-index: 10;
-  margin:0;
-}
-@media only screen and (max-width: 992px) {
-    #navbarNav{
-      margin: 0;
-      margin-top:1em;
-     
+@media only screen and (max-width: 1027px) {
+  #navbarNav {
+    margin: 0;
+    margin-top: 1em;
   }
-  nav{
+
+  .burger {
+    display: none;
+  }
+
+  nav {
     height: auto !important;
-    margin-top:1em;
-    padding-left: 20px!important;
-    padding-right: 20px!important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
-  .navbar-collapse{
+  .navbar-collapse {
     background: #fafafa;
     margin: 0;
     padding: 0;
   }
+}
+
+@media only screen and (max-width: 600px) {
 }
 </style>

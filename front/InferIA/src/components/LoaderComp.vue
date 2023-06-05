@@ -25,7 +25,7 @@
   bottom: 0;
   margin: auto;
   border: 3px solid;
-  border-color: transparent #47b5ff #47b5ff;
+  border-color: transparent #06283D  #06283D ;
   width: 24px;
   height: 24px;
   border-radius: 50%;

@@ -65,25 +65,25 @@ geo()
 
 
 <template>
-   <div class="border border-primary-subtle plus_info pb-4">
-        <h6 class="fw-bold mt-3"> Price</h6>
-        <h6 class="fw-bold green ms-2" :class="{ free: isFree, pay: !isFree}" > Free</h6>
-        <h6 class="fw-bold mt-3">  License </h6>
-        <a :href="data.license" class="ms-2">  {{  data.license }}</a>
-        <h6 class="fw-bold mt-3">Source</h6>
-        <a :href="`https://${data.provider}`" class="ms-2"> {{ data.provider }}</a>
-        <h6 class="fw-bold mt-3"> Issued</h6>
-        <p class="ms-2">{{ issued || "---"}} </p>
-        <h6 class="fw-bold mt-3">Last modified</h6>
-        <p class="ms-2"> {{  lastModified || "---" }}</p>
-        <h6 class=" fw-bold mt-3">Temporal coverage</h6>
-        <p class="ms-2">{{ time || '---'}}</p>
-        <h6 class="fw-bold mt-3"> Geographic coverage </h6>
-        <ul class="ms-2 " v-if="all">
+   <div class="min-w-[300px] max-w-[500px] cardx  p-6 border-2 border-gray-100 rounded-md truncate w-full">
+        <h6 class="font-bold mt-3"> Price</h6>
+        <h6 class="font-semibold green mt-1 " :class="{ free: isFree, pay: !isFree}" > Free</h6>
+        <h6 class="font-bold mt-3">  License </h6>
+        <a :href="data.license" class="text-base">  {{  data.license }}</a>
+        <h6 class="font-bold mt-3">Source</h6>
+        <a :href="`https://${data.provider}`" class="text-base"> {{ data.provider }}</a>
+        <h6 class="font-bold mt-3"> Issued</h6>
+        <p class="px-2">{{ issued || "---"}} </p>
+        <h6 class="font-bold mt-3">Last modified</h6>
+        <p class="px-2"> {{  lastModified || "---" }}</p>
+        <h6 class=" font-bold mt-3">Temporal coverage</h6>
+        <p class="px-2">{{ time || '---'}}</p>
+        <h6 class="font-bold mt-3"> Geographic coverage </h6>
+        <ul class="px-2 " v-if="all">
             <li v-for="place in geoContent"> {{ place}} </li>
         </ul>
         <ul v-else-if="!all && !notArray">
-            <li class="ms-2"> {{ geoContent[0] }}</li>
+            <li class="px-2"> {{ geoContent[0] }}</li>
         </ul>
         <p v-else-if="notArray"> {{ geoContent }}</p>
         <div v-if="isButtonMore" class="mt-3"> 
@@ -94,26 +94,26 @@ geo()
 
 
 <style scoped>
+.cardx{
+    box-shadow: 0px 5px 15px -4px rgba(0, 0, 0, 0.1);
+    
+}
+
 ul {
   list-style-type: none;
   margin: 0 ;
   padding: 0;
 }
 
-h6.fw-bold.mt-3 {
-    color: #66666E;
+h6 {
+    color: #06283D;
 }
 
-p, ul{
-    color: #889696
+a, h5{
+    color: #47B5FF;
 }
 
-.border.border-primary-subtle.plus_info {
-    height: auto;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-radius: 6px;
-    padding: 16px;
+.free{
+    color: #38b000;
 }
 </style>

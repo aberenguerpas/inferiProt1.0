@@ -1,107 +1,126 @@
 <script setup>
 import { RouterLink } from "vue-router";
 
-const props = defineProps(['data'])
-console.log('here', props.data)
-
+const props = defineProps(["data"]);
+console.log("here", props.data);
 </script>
 
-
 <template>
-    <router-link :to="`/details/${data.id}`">
-  
-    <div class="container card" >
-        <div class="row" >
-            <div class="col-2 img-col">
-                <img :src="data.img_portal" class="" height="100" width="100">
+  <router-link :to="`details/${data.id}`">
+    <div
+      class="lg:flex-col lg:mt-0 my-5 rounded-lg border-2 border-gray-100 cardx min-w-0"
+    >
+      <div class="flex items-start p-4">
+        <img :src="data.img_portal" class="w-1/12 mr-6 rounded-md" />
+        <div>
+          <div class="wrapper-title"> 
+            <h5 class="font-bold text-[#06283D] text-xl title ">
+            {{ data.title }}
+          </h5>
+          </div>
+          
+
+          <div class="flex py-1 mb-3 pills text-sm">
+            <div
+              class="mr-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 text-white flex items-center justify-center"
+            >
+              <i
+                class="fa-regular fa-file fa-xs mr-1"
+                style="color: #ffffff"
+              ></i>
+              CSV
             </div>
-           <div class="col-lg-10 col-12">
-                <div class="card-body mt-1">
-                    <h5 class="card-title mb-0 fw-bold">{{ data.title }}</h5>
-                    <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item"><i class="bi bi-file-earmark-ruled"></i> CSV</li>
-                        <li class="list-group-item"><i class="bi bi-patch-check"></i> <a :href="data['license']">License</a></li>
-                        <li class="list-group-item free"><i class="bi bi-cash"></i> Free</li>
-                    </ul>
-                    <p class="mt-2 card-text text-secondary"> {{ data.description }}</p>
-                </div>
-           </div>
+            <div
+              class="mr-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 text-white flex items-center justify-center"
+            >
+              <i
+                class="fa-regular fa-circle-check fa-xs mr-1"
+                style="color: #ffffff"
+              ></i>
+              <a
+                :href="data['license']"
+                class="hover:bg-gradient-to-r from-cyan-500 to-blue-500 text-sm"
+                >License</a
+              >
+            </div>
+            <div
+              class="mr-2 rounded-full bg-gradient-to-r from-lime-500 to-green-500 px-4 text-white flex items-center justify-center"
+            >
+              <i
+                class="fa-regular fa-money-bill-1 fa-xs mr-1"
+                style="color: #ffffff"
+              ></i>
+              Free
+            </div>
+          </div>
+          <div class="description-wrapper">
+            <p class="card-text text-base description">{{ data.description }}</p>
+          </div>
         </div>
-  </div>
-    </router-link>
-  
+        
+      </div>
+    </div>
+  </router-link>
 </template>
 
-
 <style scoped>
-.list-group, .list-group-item{
-    border: 0!important;
-    margin: 0 !important;
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-    .card{
-        margin-top:1em;
-        margin-bottom:1em;
-        padding: 1em;
-        text-align: left;
-        height: 180px;
-    }
-    .card-title {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        background-color: none!important;
-    }
-    .card-body{
-        padding: 0;
-        height: auto;
-        height: 150px;
-    }
-    .card-text{
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
 
-    img{
-        border-radius: 2px;
-        object-fit: contain;
-    }
-    
-    .list-group-item{
-        padding-left: 0;
-    }
+.description-wrapper{
+  height: 3em;
+}
 
-    @media only screen and (max-width: 992px) {
-    li, a{
-        font-size: .9em!important;
-        }
-        
-        .card{
-            width: 25rem;
-        }
-    }
+.wrapper-title{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    h5{
-        font-size: 1em;
-    }
-   
+.title{
+  height: 2em;
+}
 
-    
-    @media only screen and (max-width: 600px) {
+.cardx {
+  box-shadow: 0px 5px 15px -4px rgba(0, 0, 0, 0.1);
+}
 
-        .card{
-            width: 21rem;
-        }
+.pills a {
+  color: white !important;
+}
 
-        .img-col{
-            display: none;
-        }
+@media (hover: hover) {
+  a:hover {
+    background-color: transparent !important;
+  }
+}
 
-        h5, ul{
-            font-size: 17px;
-        }
-    }
-    
+@media only screen and (max-width: 992px) {
+  li,
+  a {
+    font-size: 0.9em !important;
+  }
+}
+
+h5 {
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    display: none;
+  }
+
+  h5 {
+    font-size: 17px;
+  }
+}
 </style>
