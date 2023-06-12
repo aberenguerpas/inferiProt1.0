@@ -52,11 +52,11 @@ const toggle = () => {
           Sell Your Data
         </a>
 
-        <RouterLink to="/useCases"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
+        <RouterLink to="/useCases"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5" active-class="active">
           Use Cases
         </RouterLink>
        
-        <RouterLink to="/providers"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
+        <RouterLink to="/providers"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5" active-class="active">
           Providers
         </RouterLink>
 
@@ -91,6 +91,12 @@ const toggle = () => {
 </template>
 
 <style scoped>
+
+.active{
+  color:#47b5ff;
+}
+
+
 nav {
   height: 90px !important;
   box-shadow: 0px 5px 15px -4px rgba(0, 0, 0, 0.1);

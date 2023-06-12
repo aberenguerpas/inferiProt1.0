@@ -32,18 +32,18 @@ const show = () => {
     <!--text part-->
     <div class="lg:w-3/4 w-full p-5">
       <h3 class="font-semibold text-xl text-gray-700">{{ title }}</h3>
-      <div class="flex my-2 flex-wrap">
+      <div class="flex mt-3 flex-wrap">
         <span
-          class="mr-2 my-4 lg:my-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-          >tag 1</span
+          class="mr-2 lg:my-0 my-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
+          >Shopping</span
         >
         <span
-          class="mr-2 rounded-full my-4 lg:my-0 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-          >tag 2</span
+          class="mr-2 rounded-full my-2 lg:my-0 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
+          >Economy</span
         >
         <span
-          class="mr-2 rounded-full my-4 lg:my-0 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-          >tag 3
+          class="mr-2 rounded-full my-2 lg:my-0 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
+          >Local Trade
         </span>
       </div>
       <div class="description-wrapper">

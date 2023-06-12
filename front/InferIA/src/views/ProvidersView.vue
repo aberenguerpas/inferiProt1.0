@@ -11,7 +11,7 @@ const { providers } = store;
 
 <template>
   <div
-    class="container lg:my-5 lg:mx-auto lg:px-12 lg:mt-32 my-24 min-h-screen"
+    class="container lg:my-5 mx-auto lg:px-12 lg:mt-32 my-24 min-h-screen"
   >
     <div class="w-full lg:w-8/12 mx-auto">
       <BreadCrumbs :list="['Providers']" />
@@ -23,7 +23,7 @@ const { providers } = store;
       Providers
     </h1>
 
-    <div class="w-full lg:w-8/12 md:w-10/12 mx-auto  md:flex md:flex-wrap mt-8 " >
+    <div class="w-full lg:w-8/12 md:w-10/12 mx-auto md:flex md:flex-wrap mt-8 " >
       <div v-for="item in providers" class=" mx-auto mb-6">
         <CardVertical
           :img_src="item.img"
