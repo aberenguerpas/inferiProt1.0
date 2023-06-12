@@ -38,16 +38,7 @@ const dataProviders = {
 
     <div class="w-full lg:w-8/12 mx-auto my-6">
       <p class="lg:px-3 text-gray-500">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla
-        nibh neque, accumsan maximus nunc lobortis rhoncus. Cras feugiat ac eros
-        eget rhoncus. Suspendisse rutrum bibendum egestas. Morbi eleifend at
-        libero a placerat. Vestibulum tincidunt mi ultricies justo aliquam, at
-        gravida tortor fringilla. Cras vitae nisi ut ex interdum ullamcorper id
-        in ligula. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus
-        orci luctus et ultrices posuere cubilia curae; Duis dictum quam a est
-        aliquam bibendum. Vestibulum elementum dui in sapien aliquam bibendum.
-        Pellentesque sollicitudin metus quis sem finibus, in blandit tortor
-        tempus.
+        {{  providers[name].description }}
       </p>
     </div>
 
