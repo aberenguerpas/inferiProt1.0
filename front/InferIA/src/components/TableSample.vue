@@ -4,9 +4,9 @@ const props = defineProps(['sample'])
 
 
 <template>
-    <div v-if="sample" class="table-container " >
-        <table class="table table-striped">
-            <thead class="text-light py-1">
+    <div v-if="sample" class="table-container w-full" >
+        <table class="table w-full">
+            <thead class="text-white py-1 rounded-lg">
                 <tr class="stiky-header">
                 <th v-for="item in props.sample.columns" > {{ item }}</th>
                 </tr>
@@ -27,20 +27,19 @@ const props = defineProps(['sample'])
 
 
 <style scoped>
-.table-container{
-    overflow: scroll;
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-    max-height: 600px;
-}
+
+   
+   
 
 
 tr.stiky-header {
     position: sticky;
     top: 0;
-    z-index: 999;
+    right: 0;
+    left: 0;
+    z-index: 9;
     background: #06283d;
+    border-radius: 20%;
 }
 
 .table>:not(caption)>*>* {

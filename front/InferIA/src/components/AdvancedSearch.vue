@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import DropFile from './DropFile.vue';
 import { useToastify } from '../composables/toastify'
 
+
+
+//este componente era ese de subir un archivo con drag and drop
 const { showMessage } = useToastify()
 
 const slider = ref(false)

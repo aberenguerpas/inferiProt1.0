@@ -1,24 +1,29 @@
+
 @import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 #app {
   margin: 0 auto;
   font-weight: normal;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 
 a,
 .green {
   text-decoration: none;
-  color: #47b5ff;
+  color: #06283D;
   transition: 0.4s;
+  font-family: "Ubuntu", sans-serif;;
 }
 
 .bi{
-  cursor: pointer
+  cursor: pointer;
+  color: #06283D;
 }
 
-.free{
-    color: #38b000;
-}
 
 .orange{
   color: #ffb703;
@@ -28,19 +33,9 @@ a,
   cursor: pointer;
 }
 
-.btn{
-  background-color: #47b5ff;
-  border-color: #47b5ff;
-  font-size: 17px;
-}
-
-.btn-sm{
-  font-size: 12px;
-}
-
 
 a{
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .btn:hover{
@@ -50,44 +45,42 @@ a{
 }
 
 
-
 h1{
   font-size: 20px;
   color: #06283d;
 }
 
 h5, h6{
-  font-size: 17px;
-  color: #66666e;
+  font-size: 18px;
+  color:#06283d;
 }
 
 p{
   margin-bottom: 0;
   text-align: justify;
-  color: #889696;
+  color: #6B7280;
+  font-size: 16px !important;
+  font-family: "Ubuntu", sans-serif !important;
+
 }
 
 input#textInput:focus-visible {
   outline: none;
 }
 
+
 @media (hover: hover) {
   a:hover {
     color: #47b5ff!important;
-    background-color: #fff!important;
+    background-color: #fff;
   }
 }
 
-@media (min-width: 1024px) {
-  #app {
-    display: grid;
-    padding: 0 1rem;
-  }
-}
+
 
 @media (max-width: 992px) {
-  #app {
-    padding: 0 1em;
+  .container {
+    padding: 0 2em;
   }
 }
 

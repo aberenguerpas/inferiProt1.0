@@ -1,81 +1,37 @@
 <script setup></script>
 
 <template>
-  <div class="main container-fluid">
-    <div class="row content-footer ">
-      <div class="col-md-2 col-12 colum-style pt-1">
-        <img src="../assets/img/Inferia_negativo.png" height="24" width="145" />
+  <div class="bg-[#06283D] w-full mt-8 lg:mt-0">
+    <div class="max-w-screen-xl w-full mx-auto p-10 lg:flex ">
+      <div class="lg:w-1/4 w-full">
+        <img src="../assets/img/inferia_sin_fondo.png" class="w-32" />
       </div>
 
-      <div class="col-md-2 col-12 colum-style">
-        <div class="link-container">
-          <h4>Contacto</h4>
-        </div>
-        <div class="link-container">
-          <a href="https://www.inferia.io/contact/">Contact with us </a>
-        </div>
-        <div class="link-container">
-          <a href="https://www.inferia.io/request-data/">Request data</a>
-        </div>
-        <div class="link-container">
-          <a href="https://www.inferia.io/sell-data/">Sell data </a>
-        </div>
-        <div class="pb-1">
-          <p>
-            Road San Vicente del Raspeig s/n <br />
-            03690 Alicante <br />
-            Spain
-          </p>
-        </div>
+      <div class="lg:w-1/4 w-full">
+        <h4 class="font-bold mb-9  mt-12 lg:mt-0">Contacto</h4>
+        <div class="mb-10"><a>Contact with Us</a></div>
+        <div class="mb-10"><a>Request Data</a></div>
+        <div class="mb-10"><a>Sell Data</a></div>
+        <p>
+          Road San Vicente del <br />
+          Raspeig s/n <br />
+          03690 Alicante Spain
+        </p>
       </div>
 
-      <div class="col-md-2 col-12 colum-style">
-        <div class="link-container">
-          <h4>Legal</h4>
-        </div>
-        <div class="link-container">
-          <a href="https://www.inferia.io/legal-notice/" class="pb-2"
-            >Legal Notice</a
-          >
-        </div>
-        <div class="link-container">
-          <a href="https://www.inferia.io/privacy-policy-2/">Privacy Policy</a>
-        </div>
-        <div class="link-container">
-          <a href="inferia.io/politica-de-cookies/">Cookies Policy</a>
-        </div>
+      <div class="lg:w-1/4 w-full">
+        <h4 class="font-bold mb-9  mt-12 lg:mt-0">Legal</h4>
+        <div class="mb-10"><a>Legal Notice</a></div>
+        <div class="mb-10"><a>Privacy Policy</a></div>
+        <div class="mb-10"><a>Cookies Policy</a></div>
       </div>
 
-      <div class="col-md-3 col-12 colum-style">
-        <div class="link-container">
-          <h4>Social Networks</h4>
-        </div>
-        <div class="d-flex">
-          <div
-            id="linknd"
-            class="d-flex justify-content-center align-items-center me-2"
-          >
-            <a href="https://www.linkedin.com/company/inferia/"
-              ><i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff"></i
-            ></a>
-          </div>
-          <div
-            id="twitter"
-            class="d-flex justify-content-center align-items-center"
-          >
-            <a href="https://twitter.com/inferia_io"
-              ><i class="fa-brands fa-twitter fa-lg" style="color: #ffffff"></i
-            ></a>
-          </div>
-        </div>
-      </div>
+      
 
-      <div class="col-md-2 col-12">
-        <div class="link-container">
-          <h4>With The Support</h4>
-        </div>
+      <div class="lg:w-1/4 w-full">
+        <h4 class="font-bold mb-9 mt-12 lg:mt-0">With the support</h4>
         <a href="https://pca.ua.es/">
-          <img src="../assets/img/pca-300x125.png" width="170"
+          <img src="../assets/img/Parque Cientifico Alicante-RGB-negativo.png" width="170" class="mb-8"
         /></a>
 
         <a
@@ -89,8 +45,6 @@
 </template>
 
 <style scoped>
-
-
 #linknd {
   background-color: #0d66c2;
 }
@@ -111,60 +65,23 @@ h4 {
   font-weight: 600 !important;
   font-size: 17px;
   font-family: Poppins;
-  color: #1c244b;
+  color: #fff;
 }
 
-.main {
-  background-color: #fafafa;
-  max-width: 100%;
-  margin-top: 135px;
-  height: auto;
-}
-
-.main a {
+a {
   text-decoration: underline;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #47b5ff;
 }
 
-.link-container {
-  margin-bottom: 40px;
-}
+
 
 p {
-  color: #222222;
+  color: #fff;
   font-size: 17px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.content-footer {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 40px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
-
-@media only screen and (min-width: 600px) {
-  .colum-style {
-    margin-right: 20px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .content-footer {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 40px 0px;
-  }
-
-  h4{
-    margin-top: 50px;
-  }
-}
 </style>

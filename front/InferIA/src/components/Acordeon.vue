@@ -1,72 +1,94 @@
 <script setup>
+import {ref, onMounted } from 'vue'
 
-const props = defineProps(['data'])
-const mediaTypes = []
+const props = defineProps(["data"]);
+const mediaTypes = [];
 
 const addMediaType = () => {
-   for (let i = 0; i < props.data.length; i++){
-        let type = props.data[i].mediaType
-        if(!mediaTypes.includes(type)){
-            mediaTypes.push(type)
-        }
-    } 
-}
-
-addMediaType()
-
-const isSizeNull = () =>{
-    for (let i = 0; i < props.data.length; i++){
-        let ourSize = props.data[i].size.slice(0,4)
-        if(ourSize.toLowerCase() === 'null'){
-            props.data[i].size = '---'
-        }
+  for (let i = 0; i < props.data.length; i++) {
+    let type = props.data[i].mediaType;
+    if (!mediaTypes.includes(type)) {
+      mediaTypes.push(type);
     }
-}
+  }
+};
 
-isSizeNull()
- 
+addMediaType();
+
+const isSizeNull = () => {
+  for (let i = 0; i < props.data.length; i++) {
+    let ourSize = props.data[i].size.slice(0, 4);
+    if (ourSize.toLowerCase() === "null") {
+      props.data[i].size = "---";
+    }
+  }
+};
+
+isSizeNull();
+
+const toggleContent = (index) => {
+    //itemRefs.value[index].children.style.display = 'none'
+    console.log(itemRefs.value[index].children.length)
+    for(let i = 1; i < itemRefs.value[index].children.length; i++){
+        if(itemRefs.value[index].children[i].style.display === 'none'){
+            itemRefs.value[index].children[i].style.display = 'block'
+        }else{
+            itemRefs.value[index].children[i].style.display = 'none'
+        }
+        
+    }
+};
+
+const itemRefs = ref([])
+
 </script>
 
-
 <template>
-    <div class="accordion w-90 mt-4" id="accordionExample">
-        <div class="accordion-item" v-for="(item, index) in mediaTypes" >
-            <h2 class="accordion-header" >
-                <button class="accordion-button text-capitalize"  data-bs-toggle="collapse"  :data-bs-target="`.ob${index}`" aria-expanded="true">
-                    {{ item }}
-                </button>
-            </h2>
-            <div  v-for="res in data"  class="w-90 accordion-collapse collapse show" :class="`ob${index}`" data-bs-parent="#accordionExample" >
-                <div class="card-body p-3 " v-if="res.mediaType === item" >
-                    <h6 class="card-title">{{ res.name }}</h6>
-                    <h6 class="card-subtitle mb-1 mt-1 text-muted">Size   {{ res.size }} </h6>
-                    <a :href="res.downloadUrl" class="btn btn-primary mt-2 rounded-pill" >Download</a>
-                </div>
-            </div>
+  <div class="my-6 lg:w-5/6 w-full">
+    <div class="accordion-item" v-for="(item, index) in mediaTypes" ref="itemRefs">
+      <div class="bg-[#06283D] p-3 rounded-t-lg text-white flex justify-between" >
+        <h2 class="uppercase ">
+          {{ item }}
+        </h2>
+        <button class=" rounded-md" @click="toggleContent(index)">
+            <i class="fa-solid fa-circle-down fa-lg" style="color: #ffffff;"></i>
+        </button>
+      </div>
+
+      <div v-for="(res, index) in data" class="border-2 border-gray-100">
+        <div class=" p-3" v-if="res.mediaType === item">
+          <h6 class="accordion">{{ res.name }}</h6>
+          <h6 class="mb-2 mt-1">Size {{ res.size }}</h6>
+          <button class="mt-4 bg-[#06283D] rounded-full p-2">
+            <a :href="res.downloadUrl" class="text-white">Download</a>
+          </button>
         </div>
+      </div>
     </div>
-
-  
+  </div>
 </template>
-
 
 <style scoped>
 
-.accordion-button:not(.collapsed), .accordion-item:last-of-type .accordion-button.collapsed {
-    background-color: #06283d;
-    color: white;
+
+
+.accordion {
+  transition: all 0ms;
+}
+  
+
+.rounded-full:hover{
+  background-color: white;
+  color: #47B5FF;
 }
 
-@media only screen and (max-width: 600px) {
-    #accordionExample{
-        width: 100%;
-    }
+.rounded-full a:hover{
+  background-color: transparent;
 }
 
-@media only screen and (min-width: 900px) {
-    #accordionExample{
-       margin-bottom: 50px;
-    }
-}
 
+.panel {
+  display: none;
+  overflow: hidden;
+}
 </style>
