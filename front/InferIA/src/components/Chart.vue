@@ -82,14 +82,13 @@ onMounted(() => {
   var layout = {
     
     height: 600,
-    title: "Activity hours",
     mapbox: {
       style: "carto-positron",
       zoom: 12,
       dragmode: false,
       center: {
-        lat: 37.97697222,
-        lon: -0.70916722,
+        lat: 37.990882,
+        lon: -0.680912,
       },
       domain: {
         x: [0, 1],

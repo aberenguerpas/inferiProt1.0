@@ -6,7 +6,6 @@ const open = ref(true);
 
 const toggle = () => {
   open.value ? (open.value = false) : (open.value = true);
-  console.log(open.value);
 };
 </script>
 
@@ -52,11 +51,11 @@ const toggle = () => {
           Sell Your Data
         </a>
 
-        <RouterLink to="/useCases"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5" active-class="active">
+        <RouterLink to="/useCases" @click="toggle" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
           Use Cases
         </RouterLink>
        
-        <RouterLink to="/providers"  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5" active-class="active">
+        <RouterLink to="/providers" @click="toggle" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
           Providers
         </RouterLink>
 

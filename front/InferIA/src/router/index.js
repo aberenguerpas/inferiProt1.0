@@ -3,6 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(),
   linkActiveClass: "active",
+  scrollBehavior(to, from, savedPosition) {
+  return { top: 0 }
+  },
   routes: [
     {
       path: '/',

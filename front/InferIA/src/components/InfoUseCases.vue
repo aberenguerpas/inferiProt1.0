@@ -9,7 +9,7 @@
         <span class="font-semibold text-center"> 30.000</span>
       </div>
 
-      <p class="text-base text-center h-9">Participantes</p>
+      <p class="text-base text-center h-9">Participants</p>
     </div>
 
     <div
@@ -21,7 +21,7 @@
         <span class="font-semibold text-center"> %</span>
       </div>
 
-      <p class="text-base text-center w-10/12 h-9">Ratio Liquidación</p>
+      <p class="text-base text-center w-10/12 h-9">Settlement rate</p>
     </div>
 
     <div
@@ -34,7 +34,7 @@
       </div>
 
       <p class="text-base text-center w-10/12 h-9">
-        Establecimientos adheridos
+        Adhered establishments
       </p>
     </div>
 
@@ -47,7 +47,7 @@
         <span class="font-semibold text-center"> € </span>
       </div>
 
-      <p class="text-base text-center w-10/12 h-9">En bonos canjeados</p>
+      <p class="text-base text-center w-10/12 h-9">On redeemed bonuses</p>
     </div>
   </div>
 </template>

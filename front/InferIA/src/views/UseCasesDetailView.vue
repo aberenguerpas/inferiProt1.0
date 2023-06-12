@@ -27,15 +27,9 @@ const { providers } = store;
 
     <div class="w-full lg:w-8/12 mx-auto lg:my-14 my-12 lg:flex-col">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et eros et
-        tortor bibendum efficitur. Mauris mattis euismod diam, eu sollicitudin
-        ipsum. Vestibulum id feugiat nunc, sit amet venenatis turpis. Sed
-        ultrices molestie metus, euismod auctor metus laoreet pretium. Sed
-        scelerisque leo interdum est malesuada, at porttitor nisi rutrum.
-        Vestibulum imperdiet tellus faucibus laoreet aliquet. Morbi finibus,
-        magna rutrum placerat ultrices, mi est laoreet nulla, at hendrerit ipsum
-        mauris congue erat. Vivamus sodales rhoncus consequat. Nam a odio
-        tortor.
+        Currently, the consumer voucher has become an effective strategy to promote economic growth and improve the quality of life of residents in cities.
+        This innovative incentive system has gained popularity in various locations due to the numerous benefits it offers both consumers and local businesses.
+        At InferIA we have carried out an analysis of the measurement data in the town of <strong>Torrevieja, Alicante.</strong>
       </p>
 
       <ShareButtons />
@@ -48,11 +42,9 @@ const { providers } = store;
       <div
         class="lg:p-6 mt-4 lg:mt-0 lg:w-6/12 w-full flex flex-col justify-center"
       >
-        <h4 class="text-3xl font-semibold">Analisis de los datos</h4>
+        <h4 class="text-3xl font-semibold">InferIA analysis</h4>
         <p class="mt-2">
-          En la actualidad, el bonoconsumo se ha convertido en una estrategia
-          efectiva para fomentar el crecimiento económico y mejorar la calidad
-          vida.
+          The analysis carried out in this work highlights different relevant aspects of the consumer voucher campaign.
         </p>
       </div>
     </div>
@@ -63,19 +55,22 @@ const { providers } = store;
       <div
         class="lg:p-6 my-5 lg:my-0 lg:w-5/12 w-full flex flex-col justify-center"
       >
-        <h1 class="text-3xl font-semibold">Analisis de los datos</h1>
+        <h1 class="text-3xl font-semibold">Most active days</h1>
         <p class="mt-2">
-          En la actualidad, el bonoconsumo se ha convertido en una estrategia
-          efectiva para fomentar el crecimiento económico y mejorar la calidad
-          vida.
+          In the commerce sector, a relatively stable consumption is observed from Monday to Saturday, with a slight increase on Fridays. On the other hand, in the hospitality sector, a progressive growth can be seen from Monday to Friday, reaching its highest point on weekends, especially on Saturdays and Sundays.
         </p>
       </div>
       <div class="lg:w-7/12 mx-auto border-gray-100 rounded-lg mr-4">
         <Chart2 />
       </div>
     </div>
-
-    <div class="w-full lg:w-8/12 mx-auto rounded-lg my-12">
+    <div class="w-full lg:w-8/12 mx-auto lg:mt-20 lg:mb-24 mt-12">
+    <h1 class="text-3xl font-semibold">Activity hours</h1>
+        <p class="mt-2">
+          Regarding the distribution by sectors, it is observed that at 11:00 a.m. and 7:00 p.m. the use of the consumer voucher predominates in the commercial sector. Residents take advantage of these hours to shop at retail establishments and purchase a variety of products and services. On the other hand, at 3:00 p.m. and 10:00 p.m., the activity is divided between the commercial sector and the hospitality sector. Citizens choose to enjoy gastronomic experiences in restaurants and cafes during these hours.
+        </p>
+        </div>
+    <div class="w-full lg:w-8/12 mx-auto rounded-lg">
       <Chart />
     </div>
 
@@ -88,7 +83,7 @@ const { providers } = store;
         Providers
       </h5>
     </div>
-
+    
     <div class="w-full lg:w-8/12 mx-auto px-2 my-12 flex flex-container ">
       <template v-for="item in providers" >
         <div v-if="item.useCase" class="cards mx-auto my-3">
