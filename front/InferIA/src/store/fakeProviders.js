@@ -4,9 +4,8 @@ import { defineStore } from "pinia";
 export const useFakeProviders = defineStore('useFakeProviders', () => {
 
     
-const providers = [ 
-    {
-  
+const providers = {
+    'Datos.gob': {
       name: "Datos.gob",
       useCase: false,
       img: "https://inferia-files.s3.eu-west-3.amazonaws.com/logos_providers/datos.gob.es.jpeg",
@@ -17,8 +16,8 @@ const providers = [
       environment, health, education, among others. Translated with www.DeepL.com/Translator (free version)`,
       
     },
-    {
-      
+
+    'INE':{
       name: 'INE',
       useCase: false,
       img: 'https://inferia-files.s3.eu-west-3.amazonaws.com/logos_providers/ine.png',
@@ -33,9 +32,8 @@ const providers = [
       housing), the collection of labor market data, and the publication of demographic reports and studies.
       demographic studies and reports
       `,
-  
     },
-    {
+    'Dades Obertes':{
       name: 'Dades Obertes',
       useCase: false,
       img: 'https://inferia-files.s3.eu-west-3.amazonaws.com/logos_providers/dadesObertes.png',
@@ -47,7 +45,7 @@ const providers = [
       region.
       `,
     },
-    {
+    'AEMET': {
       name: 'AEMET',
       useCase: 'bonoconsumo',
       img: 'https://inferia-files.s3.eu-west-3.amazonaws.com/logos_providers/aemet.png',
@@ -61,7 +59,7 @@ const providers = [
       and climate information management.
       `,
     },
-    {
+    'Open Street Maps':{
       name: 'Open Street Maps',
       useCase: 'bonoconsumo',
       img: 'https://inferia-files.s3.eu-west-3.amazonaws.com/logos_providers/osm.png',
@@ -76,7 +74,7 @@ const providers = [
       `,
       
     },
-    {
+    'APYMECO':{
       name: 'APYMECO',
       useCase: 'bonoconsumo',
       img: 'https://inferia-files.s3.eu-west-3.amazonaws.com/logos_providers/apymeco.png',
@@ -86,7 +84,10 @@ const providers = [
       a framework of fair, transparent and quality trade.
       `,
     }
-  ];
+  }
+    ;
+  ;
+  ;
 
   return {
     providers
