@@ -34,7 +34,7 @@ const { providers } = store;
 
       <ShareButtons />
     </div>
-
+    <InfoUseCases class="lg:my-24 my-20" />
     <div class="w-full lg:w-8/12 mx-auto lg:my-28 my-12 lg:flex">
       <div class="lg:w-6/12 mx-auto">
         <img src="../assets/img/torrevieja_test.jpg" class="object-cover" />
@@ -42,14 +42,14 @@ const { providers } = store;
       <div
         class="lg:p-6 mt-4 lg:mt-0 lg:w-6/12 w-full flex flex-col justify-center"
       >
-        <h4 class="text-3xl font-semibold">InferIA analysis</h4>
+        <h4 class="text-3xl font-semibold">Boost to the economy</h4>
         <p class="mt-2">
-          The analysis carried out in this work highlights different relevant aspects of the consumer voucher campaign.
+          Local entrepreneurs are great beneficiaries of the consumer voucher, since they receive more clients with additional resources, which increases their sales and financial stability.
         </p>
       </div>
     </div>
 
-    <InfoUseCases class="lg:my-24 my-20" />
+    
 
     <div class="w-full lg:w-8/12 mx-auto lg:mt-20 lg:mb-24 mt-12 mb-12 lg:flex">
       <div
@@ -64,10 +64,10 @@ const { providers } = store;
         <Chart2 />
       </div>
     </div>
-    <div class="w-full lg:w-8/12 mx-auto lg:mt-20 lg:mb-24 mt-12">
+    <div class="w-full lg:w-8/12 mx-auto lg:mt-20 lg:mb-5 mt-12">
     <h1 class="text-3xl font-semibold">Activity hours</h1>
         <p class="mt-2">
-          Regarding the distribution by sectors, it is observed that at 11:00 a.m. and 7:00 p.m. the use of the consumer voucher predominates in the commercial sector. Residents take advantage of these hours to shop at retail establishments and purchase a variety of products and services. On the other hand, at 3:00 p.m. and 10:00 p.m., the activity is divided between the commercial sector and the hospitality sector. Citizens choose to enjoy gastronomic experiences in restaurants and cafes during these hours.
+          Regarding the distribution by sectors, it is observed that at 11:00 and 19:00 the use of the consumer voucher predominates in the commercial sector. Residents take advantage of these hours to shop at retail establishments and purchase a variety of products and services. On the other hand, at 15:00 and 22:00 , the activity is divided between the commercial sector and the hospitality sector. Citizens choose to enjoy gastronomic experiences in restaurants and cafes during these hours.
         </p>
         </div>
     <div class="w-full lg:w-8/12 mx-auto rounded-lg">
@@ -78,13 +78,13 @@ const { providers } = store;
 
     <div class="w-full lg:w-8/12 mx-auto rounded-lg my-12">
       <h5
-        class="text-center lg:text-4xl text-3xl font-semibold lg:my-5 lg:py-6 my-3 py-3 underline underline-offset-8 decoration-pink-500"
+        class="text-left lg:text-4xl text-3xl font-semibold lg:my-5 lg:py-6 my-3 py-3 underline underline-offset-8 decoration-orange-500"
       >
         Providers
       </h5>
     </div>
     
-    <div class="w-full lg:w-8/12 mx-auto px-2 my-12 flex flex-container ">
+    <div class="w-full lg:w-8/12 mx-auto px-2 flex flex-container ">
       <template v-for="item in providers" >
         <div v-if="item.useCase" class="cards mx-auto my-3">
           <CardVertical :img_src="item.img" :description="item.description" :title="item.name"  />

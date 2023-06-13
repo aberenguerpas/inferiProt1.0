@@ -97,7 +97,7 @@ onMounted(() => {
     },
     margin: {
       r: 0,
-      t: 30,
+      t: 10,
       b: 20,
       l: 20,
       pad: 0,
@@ -116,10 +116,9 @@ onMounted(() => {
         xanchor: "left",
         y: 0,
         yanchor: "top",
-        pad: { t: 50, b: 10 },
+        pad: { t: 10, b: 10 },
         transition: {
-          duration: 300,
-          easing: "cubic-in-out",
+          duration: 300
         },
       },
     ],

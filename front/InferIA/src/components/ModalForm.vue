@@ -24,15 +24,12 @@ const toggleModal = () => {
   });
    }
 }
-
- 
-
 </script>
 
 <template>  
 
   <div class="w-full  flex items-center justify-center lg:my-16 my-14">
-    <button class="bg-[#06283D] rounded-full text-white mx-auto px-8 py-4 text-lg" @click="toggleModal"> Download Full Reports </button>
+    <button class="bg-[#06283D] rounded-full text-white mx-auto px-8 py-4 text-lg" @click="toggleModal"> Download Full Report </button>
   </div>
  
   <TransitionRoot as="template" :show="open">
@@ -56,7 +53,6 @@ const toggleModal = () => {
                   </div>
                 </div>
               </div>
-            
             </DialogPanel>
           </TransitionChild>
         </div>
