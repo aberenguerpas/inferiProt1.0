@@ -9,9 +9,9 @@
 
       <div class="lg:w-1/4 w-full">
         <h4 class="font-bold mb-9  mt-12 lg:mt-0">Contacto</h4>
-        <div class="mb-10"><a>Contact with Us</a></div>
-        <div class="mb-10"><a>Request Data</a></div>
-        <div class="mb-10"><a>Sell Data</a></div>
+        <div class="mb-10"><a href="https://www.inferia.io/contact/">Contact with Us</a></div>
+        <div class="mb-10"><a href="https://www.inferia.io/request-data/">Request Data</a></div>
+        <div class="mb-10"><a href="https://www.inferia.io/sell-data/"> Sell Data</a></div>
         <p>
           Road San Vicente del <br />
           Raspeig s/n <br />
@@ -21,9 +21,9 @@
 
       <div class="lg:w-1/4 w-full">
         <h4 class="font-bold mb-9  mt-12 lg:mt-0">Legal</h4>
-        <div class="mb-10"><a>Legal Notice</a></div>
-        <div class="mb-10"><a>Privacy Policy</a></div>
-        <div class="mb-10"><a>Cookies Policy</a></div>
+        <div class="mb-10"><a  href="https://www.inferia.io/legal-notice/">Legal Notice</a></div>
+        <div class="mb-10"><a href="https://www.inferia.io/privacy-policy-2/">Privacy Policy</a></div>
+        <div class="mb-10"><a href="https://www.inferia.io/politica-de-cookies/">Cookies Policy</a></div>
       </div>
 
       
@@ -75,6 +75,10 @@ a {
   color: #47b5ff;
 }
 
+a:hover{
+  background-color: transparent;
+  color: white !important;
+}
 
 
 p {
