@@ -2,25 +2,22 @@
 import { RouterLink } from "vue-router";
 
 const props = defineProps(["data"]);
-console.log("here", props.data);
 </script>
 
 <template>
   <router-link :to="`details/${data.id}`">
     <div
-      class="lg:flex-col lg:mt-0 my-5 rounded-lg border-2 border-gray-100 cardx min-w-0"
+      class="lg:flex-col lg:mt-0 my-3 rounded-lg border-2 border-gray-100 cardx min-w-0"
     >
       <div class="flex items-start p-4">
         <img :src="data.img_portal" class="w-1/12 mr-6 rounded-md" />
         <div>
           <div class="wrapper-title"> 
-            <h5 class="font-bold text-[#06283D] text-xl title ">
+            <h6 class="font-bold text-[#06283D] text-sm lg:text-base">
             {{ data.title }}
-          </h5>
+          </h6>
           </div>
-          
-
-          <div class="flex py-1 mb-3 pills text-sm">
+          <div class="flex py-1 mb-2 pills text-xs lg:text-sm">
             <div
               class="mr-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 text-white flex items-center justify-center"
             >
@@ -39,7 +36,7 @@ console.log("here", props.data);
               ></i>
               <a
                 :href="data['license']"
-                class="hover:bg-gradient-to-r from-cyan-500 to-blue-500 text-sm"
+                class="hover:bg-gradient-to-r from-cyan-500 to-blue-500 "
                 >License</a
               >
             </div>
@@ -54,7 +51,7 @@ console.log("here", props.data);
             </div>
           </div>
           <div class="description-wrapper">
-            <p class="card-text text-base description">{{ data.description }}</p>
+            <p class="card-text description text-xs lg:text-sm">{{ data.description }}</p>
           </div>
         </div>
         
@@ -67,14 +64,10 @@ console.log("here", props.data);
 
 .description {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.description-wrapper{
-  height: 3em;
 }
 
 .wrapper-title{
@@ -83,10 +76,6 @@ console.log("here", props.data);
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.title{
-  height: 2em;
 }
 
 .cardx {
@@ -103,24 +92,10 @@ console.log("here", props.data);
   }
 }
 
-@media only screen and (max-width: 992px) {
-  li,
-  a {
-    font-size: 0.9em !important;
-  }
-}
-
-h5 {
-  font-size: 1em;
-}
 
 @media only screen and (max-width: 600px) {
   img {
     display: none;
-  }
-
-  h5 {
-    font-size: 17px;
   }
 }
 </style>

@@ -113,24 +113,22 @@ const goToTheme = () => {
 </script>
 
 <template>
-  <div v-if="info.results" class="container lg:my-5 my-3 mx-auto lg:px-12 lg:mt-28 mt-28  min-h-screen">
+  <div v-if="info.results" class="container lg:my-5  mx-auto lg:px-12 lg:mt-28 mt-24  min-h-screen">
 
     <div class="bg-white w-full lg:w-10/12 mx-auto">
       <BreadCrumbs :list="['Search', `${info.results.title.slice(0, 15) + '...'}`]"/>
     </div>
   
-
-
     <!--first-->
-      <div class="flex title-img my-5 w-full lg:w-10/12 mx-auto">
-        <img :src="info.results.img_portal" width="100" height="100" class="object-contain"/>
+      <div class="flex title-img w-full lg:w-10/12 mx-auto">
+        <img :src="info.results.img_portal" width="50" class="object-contain rounded-md"/>
         <div class="ml-4 w-3/5 lg:w-11/12">
-          <h1 class="my-1 break-all truncate font-bold">
+          <h1 class="my-1 break-all truncate font-bold text-base underline decoration-sky-500 underline-offset-4">
             {{ info.results.title }}
           </h1>
           <span
             @click="goToTheme"
-            class="mr-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 text-white "
+            class="mr-2 text-sm rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 text-white"
             v-for="theme in info.results.theme"
             >{{ theme }}</span
           >
@@ -139,19 +137,17 @@ const goToTheme = () => {
     
 
     <!--Second row-->
-    <div class="w-full my-10 lg:w-10/12 mx-auto rounded max-h-[500px] table-div">
+    <div class="w-full my-5 lg:w-10/12 mx-auto rounded max-h-[500px] table-div text-xs">
       <TableSample :sample="sampleTable" />
     </div>
    
     <!--third-->
     <div class="w-full my-5 lg:w-10/12 mx-auto lg:flex">
-      
         <!--left-->
         <div class="w-full lg:3/4 lg:mix-w-[40%] lg:mx-3">
-          
-            <h5 class="mx-auto font-bold text-xl text-[#06283D] ">Description</h5>
-            <div class="mt-4 leading-6 text-justify">
-              <p class="break-all text-base">{{ cuttedDescription }}</p>
+            <h5 class="mx-auto font-bold text-base text-[#06283D] ">Description</h5>
+            <div class="mt-2 leading-6 text-justify">
+              <p class="break-all text-sm">{{ cuttedDescription }}</p>
             </div>
             <div v-if="isButtonMore">
               <p
@@ -161,20 +157,15 @@ const goToTheme = () => {
                 <u>{{ btnTitle }}</u>
               </p>
             </div>
-
-
-            <div class="lg:my-5 my-6">
-                <h5 class="mx-auto font-bold text-xl text-[#06283D]">Resources</h5>
+            <div class="lg:my-5 mt-6">
+                <h5 class="mx-auto font-bold text-base text-[#06283D]">Resources</h5>
                 <Acordeon :data="info.resources" />
             </div>
         </div>
-        
-      
-
       <!--RIGHT COL-->
-        <div class="w-full lg:w-1/4 mx-auto">
+        <div class="w-full mx-auto">
 
-            <div class="my-6 mx-auto w-full flex lg:block items-center justify-center ">
+            <div class="my-6 mx-auto w-full flex lg:block items-center justify-center">
                 <MoreInfo :data="info.results" />
             </div>
             
@@ -219,22 +210,11 @@ const goToTheme = () => {
   flex-wrap: nowrap;
 }
 
-.title-img img {
-  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px; /*ok*/
-}
 
 .pay {
   color: #2c3e50;
   opacity: 0.9;
 }
-
-
-
-h6.fw-bold.badge.border.border-light-subtle.free {
-  padding: 0.8em;
-  font-size: 17px;
-}
-
 @media only screen and (min-width: 900) {
   .combinable-container.px-2 {
     margin-bottom: 39px;

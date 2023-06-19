@@ -43,18 +43,19 @@ const handleSendForm = () => {
 
 <template>
   <!-- Button trigger modal -->
-  <div class="w-full">
+  <div class="w-full hidden lg:block my-4">
     <button
       @click="toggleModal"
       type="button"
-      class="rounded-full bg-[#06283D] text-white py-2 my-6 w-full"
+      class="rounded-full bg-[#06283D] text-white py-2 my-3 w-full text-sm lg:text-base"
     >
       Advanced Search
+      <font-awesome-icon :icon="['fas', 'table']" />
     </button>
   </div>
 
   <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="relative z-10" @close="open = false">
+    <Dialog as="div" class="relative z-10 text-sm" @close="open = false">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -90,13 +91,13 @@ const handleSendForm = () => {
                   <div class="text-center py-5 sm:mt-0 w-10/12 mx-auto">
                     <DialogTitle
                       as="h3"
-                      class="text-xl font-semibold leading-6 text-[#06283D] py-2"
+                      class="text-base font-semibold leading-6 text-[#06283D] py-2"
                       >Advanced Search</DialogTitle
                     >
                     <div class="w-full">
                       <hr />
                       <div class="flex w-full border-200 my-2 items-center justify-center">
-                        <h6 class="text-center w-6/12 font-semibold">Topic</h6>
+                        <h6 class="text-center  text-sm w-6/12 font-semibold">Topic</h6>
                         <input
                           type="text"
                           class="mt-1 px-3 py-2 text-center"
@@ -265,7 +266,7 @@ const handleSendForm = () => {
                       </table>
                       <button
                         type="button"
-                        class="rounded-full bg-[#06283D] text-white py-2 w-full mt-6 text-lg"
+                        class="rounded-full bg-[#06283D] text-white py-2 w-full mt-6 text-sm"
                         @click="handleSendForm"
                       >
                         Search

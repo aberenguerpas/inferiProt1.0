@@ -81,7 +81,7 @@ onMounted(() => {
 
   var layout = {
     
-    height: 600,
+    height: 400,
     mapbox: {
       style: "carto-positron",
       zoom: 12,

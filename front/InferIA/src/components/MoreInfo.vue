@@ -65,21 +65,21 @@ geo()
 
 
 <template>
-   <div class="min-w-[300px] max-w-[500px] cardx  p-6 border-2 border-gray-100 rounded-md truncate w-full">
-        <h6 class="font-bold mt-3"> Price</h6>
-        <h6 class="font-semibold green mt-1 " :class="{ free: isFree, pay: !isFree}" > Free</h6>
-        <h6 class="font-bold mt-3">  License </h6>
-        <a :href="data.license" class="text-base">  {{  data.license }}</a>
-        <h6 class="font-bold mt-3">Source</h6>
-        <a :href="`https://${data.provider}`" class="text-base"> {{ data.provider }}</a>
-        <h6 class="font-bold mt-3"> Issued</h6>
-        <p class="px-2">{{ issued || "---"}} </p>
-        <h6 class="font-bold mt-3">Last modified</h6>
-        <p class="px-2"> {{  lastModified || "---" }}</p>
-        <h6 class=" font-bold mt-3">Temporal coverage</h6>
-        <p class="px-2">{{ time || '---'}}</p>
-        <h6 class="font-bold mt-3"> Geographic coverage </h6>
-        <ul class="px-2 " v-if="all">
+   <div class="min-w-[300px] max-w-[500px] cardx p-4 border-2 border-gray-100 rounded-md truncate w-full">
+        <h6 class="font-bold mt-3 text-sm"> Price</h6>
+        <h6 class="font-semibold green mt-1 text-xs pl-2" :class="{ free: isFree, pay: !isFree}" > Free</h6>
+        <h6 class="font-bold mt-3 text-sm">License</h6>
+        <a :href="data.license" class="text-xs pl-2">  {{  data.license }}</a>
+        <h6 class="font-bold mt-3 text-sm">Source</h6>
+        <a :href="`https://${data.provider}`" class="text-xs pl-2"> {{ data.provider }}</a>
+        <h6 class="font-bold mt-3 text-sm"> Issued</h6>
+        <p class="px-2 text-xs pl-2">{{ issued || "---"}} </p>
+        <h6 class="font-bold mt-3 text-sm">Last modified</h6>
+        <p class="px-2 text-xs pl-2"> {{  lastModified || "---" }}</p>
+        <h6 class=" font-bold mt-3 text-sm">Temporal coverage</h6>
+        <p class="px-2 text-xs pl-2">{{ time || '---'}}</p>
+        <h6 class="font-bold mt-3 text-sm"> Geographic coverage</h6>
+        <ul class="px-2 text-xs pl-2" v-if="all">
             <li v-for="place in geoContent"> {{ place}} </li>
         </ul>
         <ul v-else-if="!all && !notArray">

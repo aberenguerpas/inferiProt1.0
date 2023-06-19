@@ -1,11 +1,13 @@
 <script setup>
 import SearchBarVue from "../components/SearchBar.vue";
 import ResultCardVue from "../components/ResultCard.vue";
+import SearchFilters from "../components/SearchFilters.vue";
 import DataFormVue from "../components/DataForm.vue";
 import LoadCompVue from "../components/LoaderComp.vue";
 import BreadCrumbs from "../components/BreadCrumbs.vue";
 import IconFaceVue from "../components/icons/IconFace.vue";
 import AdvanceSearchModel from "../components/AdvanceSearchModel.vue"
+
 //STORES from pinia
 import { storeToRefs } from "pinia";
 import { useAdvanceSearchStore } from "../store/AdvanceSearch";
@@ -33,19 +35,18 @@ const tags = {
 </script>
 
 <template>
-  <div class="container lg:my-5 my-3 mx-auto lg:px-12 lg:mt-28 mt-28 min-h-screen">
+  <div class="container lg:my-5 my-3 mx-auto lg:px-12 lg:mt-28 mt-24">
   
       <div class="bg-white w-full lg:w-10/12 mx-auto">
-        <BreadCrumbs :list="['Search']" />
+        <BreadCrumbs :list="['Results']" />
       </div>
 
-      <div class="bg-white w-full lg:w-10/12 mx-auto my-3">
+      <div class="bg-white w-full lg:w-10/12 mx-auto">
         <SearchBarVue />
+        <SearchFilters/>
       </div>
       <!--Results-->
-
-      <div class="my-6 mx-auto w-full lg:w-10/12 ">
-      
+      <div class="my-3 mx-auto w-full lg:w-10/12 ">
           <p class="text-gray-400">
             Results
             <span v-if="results && results['results']">{{
@@ -53,7 +54,7 @@ const tags = {
             }}</span>
           </p>
         
-          <div class="w-full  mt-3">
+          <div class="w-full mt-3">
             <hr class="w-full">
           </div>
         
@@ -68,19 +69,19 @@ const tags = {
           v-if="
             results && results['results'] && results['results'].length === 0
           "
-          class="m-5 flex items-center justify-center flex-col"
+          class="m-5 flex items-center justify-center flex-col my-10"
         >
           <div class="py-3">
             <IconFaceVue />
           </div>
-          <h5 class="font-bold text-2xl text-center">
+          <h5 class="font-bold text-base text-center">
             Ups! We haven't found anything!
           </h5>
 
-          <p class="mt-3 text-center">
+          <p class="mt-3 text-center text-xs lg:text-sm">
             Don't worry, we get can get it for you!<br />
             Let us know what you need clicking
-            <a href="https://www.inferia.io/request-data/">here.</a>
+            <a href="https://www.inferia.io/request-data/">here</a>
           </p>
         </div>
         <div v-else-if="results === 'loading'" class="text-center">
@@ -93,8 +94,8 @@ const tags = {
         </div>
       </div>
 
-      <div class="w-full lg:w-3/12 bg-white my-8 lg:my-0 mx-auto flex flex-col items-center justify-center lg:block">
-        <DataFormVue />
+      <div class="w-full lg:w-3/12 bg-white my-4 lg:my-0 mx-auto flex flex-col items-center justify-center lg:block">
+        <DataFormVue/>
         <AdvanceSearchModel/>
       </div>
     </div>
@@ -102,11 +103,4 @@ const tags = {
 </template>
 
 <style scoped>
-.container {
-  font-family: "Ubuntu", sans-seri;
-}
-
-
-
-     
 </style>

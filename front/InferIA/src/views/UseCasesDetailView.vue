@@ -18,23 +18,16 @@ const { providers } = store;
   <div
     class="container lg:my-5 my-3 lg:mx-auto lg:px-12 lg:mt-32 mt-24 mx-auto min-h-screen"
   >
-    <BreadCrumbs :list="['Use Cases', 'Bonoconsumo']" />
-    <h1
-      class="text-center lg:text-5xl text-4xl font-semibold lg:my-5 lg:py-6 my-3 py-3 underline underline-offset-8 decoration-pink-500"
-    >
-      Bonoconsumo
-    </h1>
-
-    <div class="w-full lg:w-8/12 mx-auto lg:my-14 my-12 lg:flex-col">
-      <p>
+    <div class="w-full lg:w-8/12 mx-auto lg:my-14 my-4 lg:flex-col text-sm lg:text-base">
+      <BreadCrumbs :list="['Use Cases', 'Bonoconsumo']" />
+      <p class="my-4">
         Currently, the consumer voucher has become an effective strategy to promote economic growth and improve the quality of life of residents in cities.
         This innovative incentive system has gained popularity in various locations due to the numerous benefits it offers both consumers and local businesses.
         At InferIA we have carried out an analysis of the measurement data in the town of <strong>Torrevieja, Alicante.</strong>
       </p>
-
       <ShareButtons />
     </div>
-    <InfoUseCases class="lg:my-24 my-20" />
+    <InfoUseCases class="lg:my-24 my-20"/>
     <div class="w-full lg:w-8/12 mx-auto lg:my-28 my-12 lg:flex">
       <div class="lg:w-6/12 mx-auto">
         <img src="../assets/img/torrevieja_test.jpg" class="object-cover" />
@@ -42,21 +35,19 @@ const { providers } = store;
       <div
         class="lg:p-6 mt-4 lg:mt-0 lg:w-6/12 w-full flex flex-col justify-center"
       >
-        <h4 class="text-3xl font-semibold">Boost to the economy</h4>
-        <p class="mt-2">
+        <h4 class="text-xl font-semibold">Boost to the economy</h4>
+        <p class="mt-2 text-sm lg:text-base">
           Local entrepreneurs are great beneficiaries of the consumer voucher, since they receive more clients with additional resources, which increases their sales and financial stability.
         </p>
       </div>
     </div>
 
-    
-
     <div class="w-full lg:w-8/12 mx-auto lg:mt-20 lg:mb-24 mt-12 mb-12 lg:flex">
       <div
         class="lg:p-6 my-5 lg:my-0 lg:w-5/12 w-full flex flex-col justify-center"
       >
-        <h1 class="text-3xl font-semibold">Most active days</h1>
-        <p class="mt-2">
+        <h1 class="text-xl font-semibold">Most active days</h1>
+        <p class="mt-2 text-sm lg:text-base">
           In the commerce sector, a relatively stable consumption is observed from Monday to Saturday, with a slight increase on Fridays. On the other hand, in the hospitality sector, a progressive growth can be seen from Monday to Friday, reaching its highest point on weekends, especially on Saturdays and Sundays.
         </p>
       </div>
@@ -65,8 +56,8 @@ const { providers } = store;
       </div>
     </div>
     <div class="w-full lg:w-8/12 mx-auto lg:mt-20 lg:mb-5 mt-12">
-    <h1 class="text-3xl font-semibold">Activity hours</h1>
-        <p class="mt-2">
+    <h1 class="text-xl font-semibold">Activity hours</h1>
+        <p class="mt-2 text-sm lg:text-base">
           Regarding the distribution by sectors, it is observed that at 11:00 and 19:00 the use of the consumer voucher predominates in the commercial sector. Residents take advantage of these hours to shop at retail establishments and purchase a variety of products and services. On the other hand, at 15:00 and 22:00 , the activity is divided between the commercial sector and the hospitality sector. Citizens choose to enjoy gastronomic experiences in restaurants and cafes during these hours.
         </p>
         </div>
@@ -76,9 +67,9 @@ const { providers } = store;
 
     <ModalForm />
 
-    <div class="w-full lg:w-8/12 mx-auto rounded-lg my-12">
+    <div class="w-full lg:w-8/12 mx-auto rounded-lg">
       <h5
-        class="text-left lg:text-4xl text-3xl font-semibold lg:my-5 lg:py-6 my-3 py-3 underline underline-offset-8 decoration-orange-500"
+        class="text-left lg:text-2xl text-xl font-semibold lg:my-5 lg:py-6  py-3 underline underline-offset-8 decoration-orange-500"
       >
         Providers
       </h5>

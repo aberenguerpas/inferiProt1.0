@@ -28,26 +28,36 @@ const show = () => {
     <div class="hidden lg:grid lg:w-1/4 mr-3" v-else>
       <img :src="img_src" class="rounded-l-lg object-cover w-full h-full" />
     </div>
-
     <!--text part-->
-    <div class="lg:w-3/4 w-full p-5">
-      <h3 class="font-semibold text-xl text-gray-700">{{ title }}</h3>
-      <div class="flex mt-3 flex-wrap">
-        <span
-          class="mr-2 my-4 lg:my-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-          >Shopping</span
-        >
-        <span
-          class="mr-2 rounded-full my-4 lg:my-0 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-          >Economy</span
-        >
-        <span
-          class="mr-2 rounded-full my-4 lg:my-0 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-          >Local trade
-        </span>
+    <div class="lg:w-3/4 w-full p-4">
+      
+      <div class="flex mb-3" v-if="props.title == 'Bonoconsumo'">
+      <img
+        src="../assets/img/bonoimg.jpg"
+        class="rounded-lg object-cover w-3/12 m-2 visible lg:hidden"
+      />
+
+      <div class="flex flex-col">
+        
+        <h3 class="font-semibold text-base text-gray-700 lg:text-xl">{{ title }}</h3>
+        <div class="flex flex-wrap text-xs lg:text-sm">
+          <span
+            class="m-0.5 rounded-full my-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
+            >Shopping</span
+          >
+          <span
+            class="mr-0.5 rounded-full my-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
+            >Economy</span
+          >
+          <span
+            class="mr-0.5 rounded-full my-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
+            >Local trade
+          </span>
+        </div>
+        </div>
       </div>
       <div class="description-wrapper">
-        <p class="my-5 lg:my-4 text-base description">
+        <p class="lg:my-4 text-sm lg:text-base description">
           {{ description }}
           ...
         </p>
@@ -55,7 +65,7 @@ const show = () => {
 
       <button
         @click="show"
-        class="rounded-full bg-[#06283D] px-6 py-2 mt-4 text-white hover-bg-white text-[#]"
+        class="rounded-full bg-[#06283D] px-6 py-2 mt-3 text-white hover-bg-white text-[#]"
       >
         Preview
       </button>
@@ -66,13 +76,9 @@ const show = () => {
 <style scoped>
 .description {
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.description-wrapper {
-  height: 6em;
 }
 </style>

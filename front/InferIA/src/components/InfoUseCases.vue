@@ -55,7 +55,7 @@
 <style scoped>
 
 i{
-  font-size: 45px;
+  font-size: 2em;
   color: #47b5ff;
 }
 
@@ -64,7 +64,7 @@ span, p{
 }
 
 span{
-  font-size: 48px;
+  font-size: 2.5em;
 }
 
   

@@ -50,7 +50,7 @@ const toggle = () => {
         >
           Sell Your Data
         </a>
-
+        <!--
         <RouterLink to="/useCases" @click="toggle" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
           Use Cases
         </RouterLink>
@@ -58,7 +58,7 @@ const toggle = () => {
         <RouterLink to="/providers" @click="toggle" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
           Providers
         </RouterLink>
-
+      -->
         <a
           href="https://www.inferia.io/our-history/"
           class="block mt-4 lg:inline-block lg:mt-0 hover:text-[#47b5ff] text-gray-600 mr-5"

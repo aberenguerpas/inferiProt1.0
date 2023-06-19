@@ -33,7 +33,9 @@ const deleteField = (index) =>{
    <div class="card">
         <div class="card-body text-center">
           <i class="bi bi-search" style="font-size: 4rem; color:#66666E;"></i> <br>
-          <h5 class="card-title fw-bold mt-2">Advanced Search</h5>
+          <h5 class="card-title fw-bold mt-2">
+            Advanced Search
+          </h5>
             <label class="switch mt-1">
             <input type="checkbox" checked v-model="slider">
             <span class="slider round"></span>
@@ -53,11 +55,8 @@ const deleteField = (index) =>{
                 <div v-for="(f, index) in listOfFields" class="small-divsi d-flex  justify-content-center align-items-center me-2 mb-1" >
                   <p>{{ f.field }}</p>  
                   <i class="bi bi-x" @click="deleteField(index)"></i>
-                  
                 </div>
               </div>
-              
-              
             </div>
             <div v-else class="drop mt-1">
              <DropFile/>
