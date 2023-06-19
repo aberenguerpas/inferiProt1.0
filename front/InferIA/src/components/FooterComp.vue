@@ -31,7 +31,7 @@
       <div class="lg:w-1/4 w-full">
         <h4 class="font-bold mb-9 mt-12 lg:mt-0">With the support</h4>
         <a href="https://pca.ua.es/">
-          <img src="../assets/img/Parque Cientifico Alicante-RGB-negativo.png" width="170" class="mb-8"
+          <img src="../assets/img/pca.png" width="170" class="mb-8"
         /></a>
 
         <a

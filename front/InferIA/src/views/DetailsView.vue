@@ -164,11 +164,9 @@ const goToTheme = () => {
         </div>
       <!--RIGHT COL-->
         <div class="w-full mx-auto">
-
             <div class="my-6 mx-auto w-full flex lg:block items-center justify-center">
                 <MoreInfo :data="info.results" />
             </div>
-            
             <div class="my-6 mx-auto w-full flex lg:block items-center justify-center">
                 <DataForm />
             </div>
