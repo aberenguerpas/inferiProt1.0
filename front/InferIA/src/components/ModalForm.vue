@@ -29,7 +29,7 @@ const toggleModal = () => {
 <template>  
 
   <div class="w-full flex items-center justify-center lg:my-16 my-8">
-    <button class="bg-[#06283D] rounded-full text-white mx-auto px-8 py-4 text-sm lg:text-base" @click="toggleModal"> Download Full Report </button>
+    <button class="bg-[#06283D] rounded-full text-white mx-auto px-8 py-4 text-sm lg:text-base" @click="toggleModal">Descargar informe completo</button>
   </div>
  
   <TransitionRoot as="template" :show="open">
@@ -46,7 +46,7 @@ const toggleModal = () => {
                 <div class="flex items-center justify-center mx-auto w-full">
                  
                   <div class=" text-center py-5 sm:mt-0 w-10/12 mx-auto">
-                    <DialogTitle as="h3" class="text-xl font-semibold leading-6 text-[#06283D] py-2">Download Full Report</DialogTitle>
+                    <DialogTitle as="h3" class="text-xl font-semibold leading-6 text-[#06283D] py-2">Descargar informe completo</DialogTitle>
                     <div class=" w-full" id="theTarget" v-once>
                       
                     </div>

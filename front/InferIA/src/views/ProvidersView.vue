@@ -16,7 +16,7 @@ const { providers } = store;
     <div class="w-full lg:w-8/12 mx-auto">
       <BreadCrumbs :list="['Providers']" />
     </div>
-    <div class="w-full lg:w-6/12 md:w-10/12 mx-auto md:flex md:flex-wrap mt-3" >
+    <div class="w-full md:w-8/12 mx-auto md:flex md:flex-wrap mt-3" >
       <div v-for="item in providers" class=" mx-auto mb-6">
         <CardVertical
           :img_src="item.img"

@@ -5,9 +5,9 @@ import dataActividad from '../assets/data_actividad.json'
 
 onMounted(()=> {
     var trace1 = {
-  x: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+  x: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
   y: dataActividad.Comercio,
-  name: 'Commerce',
+  name: 'Comercio',
   type: 'bar',
   marker :{
     color: '#3f37c9'
@@ -15,9 +15,9 @@ onMounted(()=> {
 };
 
 var trace2 = {
-  x: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+  x: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
   y: dataActividad.Hostelería,
-  name: 'Hostelry',
+  name: 'Hostelería',
   type: 'bar',
   marker: {
     color: '#e63946'

@@ -66,19 +66,19 @@ geo()
 
 <template>
    <div class="min-w-[300px] max-w-[500px] cardx p-4 border-2 border-gray-100 rounded-md truncate w-full">
-        <h6 class="font-bold mt-3 text-sm"> Price</h6>
-        <h6 class="font-semibold green mt-1 text-xs pl-2" :class="{ free: isFree, pay: !isFree}" > Free</h6>
-        <h6 class="font-bold mt-3 text-sm">License</h6>
+        <h6 class="font-bold mt-3 text-sm"> Precio</h6>
+        <h6 class="font-semibold green mt-1 text-xs pl-2" :class="{ free: isFree, pay: !isFree}" >Gratis</h6>
+        <h6 class="font-bold mt-3 text-sm">Licencia</h6>
         <a :href="data.license" class="text-xs pl-2">  {{  data.license }}</a>
-        <h6 class="font-bold mt-3 text-sm">Source</h6>
+        <h6 class="font-bold mt-3 text-sm">Fuente</h6>
         <a :href="`https://${data.provider}`" class="text-xs pl-2"> {{ data.provider }}</a>
-        <h6 class="font-bold mt-3 text-sm"> Issued</h6>
+        <h6 class="font-bold mt-3 text-sm">Creado</h6>
         <p class="px-2 text-xs pl-2">{{ issued || "---"}} </p>
-        <h6 class="font-bold mt-3 text-sm">Last modified</h6>
+        <h6 class="font-bold mt-3 text-sm">Última modificación</h6>
         <p class="px-2 text-xs pl-2"> {{  lastModified || "---" }}</p>
-        <h6 class=" font-bold mt-3 text-sm">Temporal coverage</h6>
+        <h6 class=" font-bold mt-3 text-sm">Cobertura temporal</h6>
         <p class="px-2 text-xs pl-2">{{ time || '---'}}</p>
-        <h6 class="font-bold mt-3 text-sm"> Geographic coverage</h6>
+        <h6 class="font-bold mt-3 text-sm">Cobertura geográfica</h6>
         <ul class="px-2 text-xs pl-2" v-if="all">
             <li v-for="place in geoContent"> {{ place}} </li>
         </ul>
@@ -87,7 +87,7 @@ geo()
         </ul>
         <p v-else-if="notArray"> {{ geoContent }}</p>
         <div v-if="isButtonMore" class="mt-3"> 
-            <p @click="showMoreOrLess" class="text-muted text-end"> <u class="cursor-pointer">{{   btnTitle }}</u> </p>
+            <p @click="showMoreOrLess" class="text-muted text-end"> <u class="cursor-pointer">{{ btnTitle }}</u> </p>
         </div>
     </div>
 </template>

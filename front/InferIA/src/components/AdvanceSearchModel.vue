@@ -49,7 +49,7 @@ const handleSendForm = () => {
       type="button"
       class="rounded-full bg-[#06283D] text-white py-2 my-3 w-full text-sm lg:text-base"
     >
-      Advanced Search
+      Búsqueda avanzada
       <font-awesome-icon :icon="['fas', 'table']" />
     </button>
   </div>
@@ -92,18 +92,18 @@ const handleSendForm = () => {
                     <DialogTitle
                       as="h3"
                       class="text-base font-semibold leading-6 text-[#06283D] py-2"
-                      >Advanced Search</DialogTitle
+                      >Búsqueda avanzada</DialogTitle
                     >
                     <div class="w-full">
                       <hr />
                       <div class="flex w-full border-200 my-2 items-center justify-center">
-                        <h6 class="text-center  text-sm w-6/12 font-semibold">Topic</h6>
+                        <h6 class="text-center  text-sm w-6/12 font-semibold">Tema</h6>
                         <input
                           type="text"
                           class="mt-1 px-3 py-2 text-center"
                           :class="inputHeaderClass"
                           v-model="context"
-                          placeholder="Topic"
+                          placeholder="Tema"
                         />
                       </div>
                       <table class="table table-auto">
@@ -269,7 +269,7 @@ const handleSendForm = () => {
                         class="rounded-full bg-[#06283D] text-white py-2 w-full mt-6 text-sm"
                         @click="handleSendForm"
                       >
-                        Search
+                        Buscar
                       </button>
                     </div>
                   </div>

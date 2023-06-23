@@ -5,21 +5,21 @@ const props = defineProps(["img_src", 'description', 'title', 'topics']);
 
 <template>
    <router-link :to="`/providers/${title}/`" id="router-link">
-    <div class="xl:w-[250px] lg:w-[250px] md:w-[250px]  min-w-[250px] w-full mx-auto flex flex-col py-2 px-5 rounded-lg card ">
+    <div class="xl:w-[350px] lg:w-[350px] md:w-[350px]  min-w-[300px] w-full mx-auto flex flex-col py-2 px-5 rounded-lg card ">
       <div class="py-2 mx-auto">
         <div class="flex flex-wrap items-center">
           <img :src="img_src" class="w-2/12 mr-4 rounded-md" />
           <div class="flex flex-col w-8/12">
-            <h4 class="wrapper-title font-bold text-[#06283D]">{{ title }}</h4>
+            <h4 class="wrapper-title font-bold text-[#06283D] lg:text-base">{{ title }}</h4>
             <div class="flex flex-wrap py-1 text-xs" >
-              <div class="m-0.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-1 text-white" v-for="t in topics">
+              <div class="m-0.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-2 py-0.5 text-white" v-for="t in topics">
                 {{ t }}
               </div>
             </div>
           </div>
         </div>
           <div class="description-wrapper py-2 leading-6">
-            <p class="description text-xs lg:text-sm">{{ description }}</p>
+            <p class="description text-xs lg:text-base">{{ description }}</p>
           </div>
       </div>
   </div>

@@ -5,11 +5,11 @@
     >
       <i class="fa-solid fa-user"></i>
       <div class="flex justify-center items-center">
-        <span class="font-semibold text-center"> + </span>
-        <span class="font-semibold text-center"> 30.000</span>
+        <span class="font-semibold text-center">+</span>
+        <span class="font-semibold text-center">30.000</span>
       </div>
 
-      <p class="text-base text-center h-9">Participants</p>
+      <p class="text-base text-center h-9">Participantes</p>
     </div>
 
     <div
@@ -21,7 +21,7 @@
         <span class="font-semibold text-center"> %</span>
       </div>
 
-      <p class="text-base text-center w-10/12 h-9">Settlement rate</p>
+      <p class="text-base text-center w-10/12 h-9">Tasa de liquidación</p>
     </div>
 
     <div
@@ -34,7 +34,7 @@
       </div>
 
       <p class="text-base text-center w-10/12 h-9">
-        Adhered establishments
+        Establecimientos adheridos
       </p>
     </div>
 
@@ -47,7 +47,7 @@
         <span class="font-semibold text-center"> € </span>
       </div>
 
-      <p class="text-base text-center w-10/12 h-9">On redeemed bonuses</p>
+      <p class="text-base text-center w-10/12 h-9">En bonos canjeados</p>
     </div>
   </div>
 </template>

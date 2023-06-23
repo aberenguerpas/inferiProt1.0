@@ -38,7 +38,6 @@ const getData = async () => {
     themesFormated();
     cutDescription();
     getSample();
-    console.log(info.value);
   } catch (error) {
     console.log(error);
   }
@@ -145,7 +144,7 @@ const goToTheme = () => {
     <div class="w-full my-5 lg:w-10/12 mx-auto lg:flex">
         <!--left-->
         <div class="w-full lg:3/4 lg:mix-w-[40%] lg:mx-3">
-            <h5 class="mx-auto font-bold text-base text-[#06283D] ">Description</h5>
+            <h5 class="mx-auto font-bold text-base text-[#06283D] ">Descripción</h5>
             <div class="mt-2 leading-6 text-justify">
               <p class="break-all text-sm">{{ cuttedDescription }}</p>
             </div>
@@ -158,7 +157,7 @@ const goToTheme = () => {
               </p>
             </div>
             <div class="lg:my-5 mt-6">
-                <h5 class="mx-auto font-bold text-base text-[#06283D]">Resources</h5>
+                <h5 class="mx-auto font-bold text-base text-[#06283D]">Recursos</h5>
                 <Acordeon :data="info.resources" />
             </div>
         </div>

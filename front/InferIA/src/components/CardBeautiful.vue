@@ -43,15 +43,15 @@ const show = () => {
         <div class="flex flex-wrap text-xs lg:text-sm">
           <span
             class="m-0.5 rounded-full my-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-            >Shopping</span
+            >Compras</span
           >
           <span
             class="mr-0.5 rounded-full my-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-            >Economy</span
+            >Economía</span
           >
           <span
             class="mr-0.5 rounded-full my-1 bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white"
-            >Local trade
+            >Comercio
           </span>
         </div>
         </div>
@@ -67,7 +67,7 @@ const show = () => {
         @click="show"
         class="rounded-full bg-[#06283D] px-6 py-2 mt-3 text-white hover-bg-white text-[#]"
       >
-        Preview
+        Ver
       </button>
     </div>
   </div>

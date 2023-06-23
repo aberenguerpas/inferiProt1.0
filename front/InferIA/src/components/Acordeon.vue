@@ -60,7 +60,7 @@ const itemRefs = ref([])
           <h6 class="accordion text-sm">{{ res.name }}</h6>
           <h6 class="mb-2 mt-1 text-sm">Size: {{ res.size }}</h6>
           <button class="mt-2 bg-[#06283D] rounded-full p-2">
-            <a :href="res.downloadUrl" class="text-white text-sm">Download</a>
+            <a :href="res.downloadUrl" class="text-white text-sm">Descargar</a>
           </button>
         </div>
       </div>

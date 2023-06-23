@@ -48,7 +48,7 @@ const tags = {
       <!--Results-->
       <div class="my-3 mx-auto w-full lg:w-10/12 ">
           <p class="text-gray-400">
-            Results
+            Resultados
             <span v-if="results && results['results']">{{
               results["results"].length
             }}</span>
@@ -75,13 +75,13 @@ const tags = {
             <IconFaceVue />
           </div>
           <h5 class="font-bold text-base text-center">
-            Ups! We haven't found anything!
+            Ups! No hemos encontrado nada.
           </h5>
 
           <p class="mt-3 text-center text-xs lg:text-sm">
-            Don't worry, we get can get it for you!<br />
-            Let us know what you need clicking
-            <a href="https://www.inferia.io/request-data/">here</a>
+            No te preocupes, te lo podemos conseguir.<br />
+            Háznos saber lo qué necesitas haciendo click
+            <a href="https://www.inferia.io/request-data/">aquí</a>
           </p>
         </div>
         <div v-else-if="results === 'loading'" class="text-center">

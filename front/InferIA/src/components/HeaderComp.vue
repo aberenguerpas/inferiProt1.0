@@ -42,47 +42,47 @@ const toggle = () => {
           href="https://www.inferia.io/"
           class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
         >
-          Home
+          Inicio
         </a>
         <a
-          href="https://www.inferia.io/sell-data/"
+          href="https://www.inferia.io/vende-tus-datos/"
           class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
         >
-          Sell Your Data
+          Vende tus datos
         </a>
-        <!--
+       
         <RouterLink to="/useCases" @click="toggle" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
-          Use Cases
+          Casos de uso
         </RouterLink>
        
         <RouterLink to="/providers" @click="toggle" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5">
-          Providers
+          Proveedores
         </RouterLink>
-      -->
+    
         <a
-          href="https://www.inferia.io/our-history/"
+          href="https://www.inferia.io/nuestra-historia/"
           class="block mt-4 lg:inline-block lg:mt-0 hover:text-[#47b5ff] text-gray-600 mr-5"
         >
-          Our History
+          Nuestra Historia
         </a>
         <a
-          href="https://www.inferia.io/blog/"
+          href="https://www.inferia.io/blog-2/"
           class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
         >
           Blog
         </a>
         <a
-          href="https://www.inferia.io/contact/"
+          href="https://www.inferia.io/contacto/"
           class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
         >
-          Contact
+          Contacto
         </a>
       </div>
       <div>
         <a
-          href="https://www.inferia.io/request-data/"
+          href="https://www.inferia.io/pedir-datos/"
           class="inline-block text-sm px-4 py-3 leading-none border rounded-full text-white border-white hover:border-transparent hover:text-teal-500 bg-[#06283d] mt-4 lg:mt-0"
-          >Request Data</a
+          >Pedir datos</a
         >
       </div>
     </div>

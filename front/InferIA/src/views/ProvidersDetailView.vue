@@ -28,14 +28,14 @@ const name = route.params.name;
       <div class="flex flex-wrap">
         <div v-for="topic in providers[name].topics">
           <span
-            class="m-0.5  text-xs lg:text-base lg:my-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-0.5 text-white">
+            class="m-0.5  text-xs lg:text-sm lg:my-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-2 py-0.5 text-white">
             {{ topic }}
           </span>
         </div>
       </div>
     </div>
     </div>
-      <p class="text-sm lg:text-base text-gray-500">
+      <p class="text-sm lg:text-base text-gray-500 my-6">
         {{  providers[name].description }}
       </p>
   <div class="mx-auto my-6 flex flex-wrap ">
@@ -76,13 +76,13 @@ const name = route.params.name;
     </div>
     <div v-if="providers[name].useCase" class="w-full lg:my-20 my-14 mx-auto">
       <h1 class="text-left text-base font-semibold my-3 underline underline-offset-8 decoration-orange-500">
-       Use Cases
+       Casos de uso
       </h1>
       <CardBeautiful
         title="Bonoconsumo"
         pointer="/useCases/bonoconsumo"
         img_src="/src/assets/img/bonoimg.jpg"
-        description="Currently, the bonoconsumo has become an effective strategy to promote economic growth and improve the quality of life of residents in cities. This phenomenon needs to be analyzed to discover its true impact on the economy of cities."
+        description="Actualmente, el bonoconsumo se ha convertido en una estrategia eficaz para promover el crecimiento económico y mejorar la calidad de vida de los habitantes de las ciudades. Es necesario analizar este fenómeno para descubrir su verdadero impacto en la economía de las ciudades."
       />
     </div>
     </div>

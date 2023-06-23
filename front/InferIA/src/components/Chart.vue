@@ -24,8 +24,8 @@ onMounted(() => {
 
     frames[i] = {
       data: [
-        { marker: { size: z_c }, lat: x_c, lon: y_c, text: "Commerce" },
-        { marker: { size: z_h }, lat: x_h, lon: y_h, text: "Hostelery" },
+        { marker: { size: z_c }, lat: x_c, lon: y_c, text: "Comercio" },
+        { marker: { size: z_h }, lat: x_h, lon: y_h, text: "Hostelería" },
       ],
       name: i,
     };
@@ -60,7 +60,7 @@ onMounted(() => {
         sizemode: "area",
       },
       text: frames[0].data[0].marker.size,
-      name: "Commerce",
+      name: "Comercio",
     },
     {
       type: "scattermapbox",
@@ -75,7 +75,7 @@ onMounted(() => {
         sizemode: "area",
       },
       text: frames[0].data[0].marker.size,
-      name: "Hostelry",
+      name: "Hostelería",
     },
   ];
 
@@ -120,6 +120,15 @@ onMounted(() => {
         transition: {
           duration: 300
         },
+        currentvalue: {
+        xanchor: 'right',
+        suffix: 'h',
+        prefix: 'Actividad a las ',
+        font: {
+          color: '#888',
+          size: 16
+        }
+      },
       },
     ],
   };

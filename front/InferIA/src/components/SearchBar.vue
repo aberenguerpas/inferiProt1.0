@@ -39,7 +39,6 @@ async function onEnter() {
     if (response.ok) {
       const res = await response.json();
       results.value = res;
-      console.log("ok", results.value);
     }
   } catch (error) {
     console.log(error);
@@ -58,7 +57,7 @@ async function onEnter() {
       <IconLupaVue class="px-1"/>
 
       <input
-        placeholder="Search"
+        placeholder="Buscar..."
         id="textInput"
         autocomplete="off" 
         class="p-1 border-0 my-1 pl-2 w-5/6"

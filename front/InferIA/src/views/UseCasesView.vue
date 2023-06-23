@@ -16,7 +16,7 @@ import CardBeautiful from  '../components/CardBeautiful.vue'
       class="w-full lg:w-8/12 mx-auto my-3"
     >
       <p class="lg:px-3 text-gray-500 text-sm lg:text-base">
-        Discover the unlimited potential of data and be inspired by the use cases we offer. In an information-driven world, the ability to leverage data effectively has become a critical success factor across many industries and disciplines.
+        Descubre el ilimitado poder de los datos e inspírate con nuestros casos de uso. En un mundo donde la información está cobrando importancia, la habilidad de aprovechar los datos de forma efectiva se ha convertido en un factor de éxito crucial en varias industrias y disciplinas.
       </p>
     </div>
 
@@ -24,7 +24,7 @@ import CardBeautiful from  '../components/CardBeautiful.vue'
     
    <div class="w-full lg:w-8/12 lg:my-10 my-8 mx-auto">
     <CardBeautiful :button="true" title="Bonoconsumo" img_src="../assets/img/bonoimg.jpg" :bono="true" pointer='/useCases/bonoconsumo' 
-    description="Currently, the bonoconsumo has become an effective strategy to promote economic growth and improve the quality of life of residents in cities. This phenomenon needs to be analyzed to discover its true impact on the economy of cities."
+    description="Actualmente, el bonoconsumo se ha convertido en una estrategia eficaz para promover el crecimiento económico y mejorar la calidad de vida de los habitantes de las ciudades. Es necesario analizar este fenómeno para descubrir su verdadero impacto en la economía de las ciudades."
     />
    </div>
   </div>

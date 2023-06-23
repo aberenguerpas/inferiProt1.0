@@ -37,7 +37,7 @@ const props = defineProps(["data"]);
               <a
                 :href="data['license']"
                 class="hover:bg-gradient-to-r from-cyan-500 to-blue-500 "
-                >License</a
+                >Licencia</a
               >
             </div>
             <div
@@ -47,7 +47,7 @@ const props = defineProps(["data"]);
                 class="fa-regular fa-money-bill-1 fa-xs mr-1"
                 style="color: #ffffff"
               ></i>
-              Free
+              Gratis
             </div>
           </div>
           <div class="description-wrapper">

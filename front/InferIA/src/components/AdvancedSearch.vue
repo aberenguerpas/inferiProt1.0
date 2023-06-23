@@ -34,7 +34,7 @@ const deleteField = (index) =>{
         <div class="card-body text-center">
           <i class="bi bi-search" style="font-size: 4rem; color:#66666E;"></i> <br>
           <h5 class="card-title fw-bold mt-2">
-            Advanced Search
+            Búsqueda avanzada
           </h5>
             <label class="switch mt-1">
             <input type="checkbox" checked v-model="slider">
@@ -61,7 +61,7 @@ const deleteField = (index) =>{
             <div v-else class="drop mt-1">
              <DropFile/>
             </div>
-          <a href="https://www.inferia.io/solicitar_datos" class="btn btn-primary  btn-block mt-2 mb-2">Search</a>
+          <a href="https://www.inferia.io/solicitar_datos" class="btn btn-primary  btn-block mt-2 mb-2">Buscar</a>
         </div>
     </div>
 
