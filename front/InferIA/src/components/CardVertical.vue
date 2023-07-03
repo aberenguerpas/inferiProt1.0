@@ -5,7 +5,7 @@ const props = defineProps(["img_src", 'description', 'title', 'topics']);
 
 <template>
    <router-link :to="`/providers/${title}/`" id="router-link">
-    <div class="xl:w-[350px] lg:w-[350px] md:w-[350px]  min-w-[300px] w-full mx-auto flex flex-col py-2 px-5 rounded-lg card ">
+    <div class="xl:w-[350px] lg:w-[350px] md:w-[350px]  min-w-[300px] w-full mx-auto flex flex-col py-2 px-5 mx-2 my-4 rounded-lg card ">
       <div class="py-2 mx-auto">
         <div class="flex flex-wrap items-center">
           <img :src="img_src" class="w-2/12 mr-4 rounded-md" />
