@@ -92,11 +92,13 @@ function move(x){
     </div>
     <div class="lg:w-8/12 w-full mx-auto">
     <button style="left:-50px" class="w-8 hidden lg:block bg-cyan-500 text-white p-2 rounded-full rounded-xl border-2 border-cyan-500 absolute left-0 top-1/2 z-10" @click='move(0)'><font-awesome-icon icon="fa-solid fa-chevron-left"/></button>
-      <scroll-container id="provs" class="px-2 flex flex-container">
+      <scroll-container id="provs" class="flex flex-container">
         <div v-for="item in providers">
-          <scroll-page v-if="item.useCase" class="cards mx-auto">
-            <CardVertical :id="item.name" :img_src="item.img" :description="item.description" :title="item.name"  />
+          <div v-if="item.useCase" class="mx-2">
+          <scroll-page  class="cards mx-auto ">
+            <CardVertical :id="item.name" :img_src="item.img" :description="item.description" :title="item.name"/>
           </scroll-page>
+        </div>
         </div>
       </scroll-container>
     <button style="right:-40px" class="hidden lg:block w-8 bg-cyan-500 text-white p-2 rounded-full rounded-xl border-2 border-cyan-500 absolute top-1/2" @click='move(1000)'><font-awesome-icon icon="fa-solid fa-chevron-right"/></button>
