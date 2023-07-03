@@ -95,7 +95,6 @@ const toggle = () => {
   color:#47b5ff;
 }
 
-
 nav {
   height: 90px !important;
   box-shadow: 0px 5px 15px -4px rgba(0, 0, 0, 0.1);

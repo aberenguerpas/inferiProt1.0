@@ -12,6 +12,13 @@ import { useFakeProviders } from "../store/fakeProviders";
 const store = useFakeProviders();
 
 const { providers } = store;
+
+function move(x){
+
+  let container = document.getElementById('provs');
+
+  container.scrollTo({ left: x, behavior: 'smooth' });
+}
 </script>
 
 <template>
@@ -21,10 +28,18 @@ const { providers } = store;
   
     <div class="w-full lg:w-8/12 mx-auto lg:my-14 my-4 lg:flex-col text-sm lg:text-base">
       <BreadCrumbs :list="['Use Cases', 'Bonoconsumo']" />
-      <h1 class="text-3xl text-center underline decoration-sky-500 m-12">Bonoconsumo</h1>
-      <p class="my-4">
-        Actualmente, el bonoconsumo se ha convertido en una estrategia eficaz para promover el crecimiento económico y mejorar la calidad de vida de los habitantes de las ciudades. Es necesario analizar este fenómeno para descubrir su verdadero impacto en la economía de las ciudades.
-        En InferIA hemos llevado a cabo un análisis de los datos generados en la ciudad de <strong>Torrevieja, Alicante.</strong>
+      <h1 class="text-3xl text-center underline decoration-sky-500 m-12">La iniciativa <strong>Bono Consumo</strong>: Estrategia efectiva para el crecimiento económico y calidad de vida</h1>
+      <h4 class="text-xl font-semibold">Análisis del impacto económico</h4>
+      <p class="my-4">Para comprender el impacto real de estas herramientas, es crucial realizar un análisis exhaustivo de este fenómeno en la economía de las ciudades. En <strong>InferIA</strong>, hemos llevado a cabo un análisis detallado de los datos generados en la ciudad de <strong>Torrevieja</strong>. Nuestro equipo de expertos ha examinado minuciosamente los datos obtenidos a través del programa <strong>Bono Consumo</strong>, analizando los cambios en los patrones de consumo, identificando los sectores económicos más beneficiados y evaluando el impacto a largo plazo en la economía local.
+      </p>
+      <h4 class="text-xl font-semibold">Resultados y aplicabilidad</h4>
+      <p class="my-4">Los resultados obtenidos nos proporcionan una comprensión más clara de cómo el <strong>Bono Consumo</strong> ha contribuido al crecimiento económico de <strong>Torrevieja</strong>, y cómo estas conclusiones pueden aplicarse en otras ciudades. Nuestro objetivo principal es proporcionar una base sólida de información que ayude a las autoridades y a los responsables de la toma de decisiones a diseñar estrategias efectivas de estímulo económico, con el propósito de mejorar la calidad de vida de los vecinos y vecinas de estas ciudades.
+      </p>
+      <h4 class="text-xl font-semibold">Compromiso de <strong>InferIA</strong></h4>
+      <p class="my-4">En <strong>InferIA</strong>, estamos comprometidos con la investigación y el análisis de estas iniciativas innovadoras que impulsan el desarrollo económico sostenible. Continuaremos trabajando para proporcionar información valiosa que respalde la toma de decisiones informadas y promueva el bienestar de las comunidades locales.
+      </p>
+      <h4 class="text-xl font-semibold">Explora nuestra investigación completa</h4>
+      <p class="my-4">Si estás interesado en conocer más detalles sobre el caso de uso del <strong>Bono Consumo</strong> en <strong>Torrevieja</strong> y cómo puede aplicarse en otras ciudades, te invitamos a explorar nuestra investigación completa en <strong>InferIA</strong>. Obtén una visión detallada de los resultados y descubre cómo esta estrategia puede ayudar a impulsar el crecimiento económico y mejorar la calidad de vida en tu comunidad.
       </p>
       <ShareButtons />
     </div>
@@ -75,28 +90,28 @@ const { providers } = store;
         Proveedores
       </h5>
     </div>
-    
-    <div class="w-full lg:w-8/12 mx-auto px-2 flex flex-container ">
-      <template v-for="item in providers" >
-        <div v-if="item.useCase" class="cards mx-auto my-3">
-          <CardVertical :img_src="item.img" :description="item.description" :title="item.name"  />
-        </div>
-      </template>
-    </div>
+    <div class="lg:w-8/12 w-full mx-auto">
+    <button style="left:-50px" class="w-8 bg-cyan-500 text-white p-2 rounded-full rounded-xl border-2 border-cyan-500 absolute left-0 top-1/2 z-10" @click='move(0)'><font-awesome-icon icon="fa-solid fa-chevron-left"/></button>
+      <div id="provs" class=" px-2 flex flex-container">
+        <scroll-container  v-for="item in providers">
+          <scroll-page v-if="item.useCase" class="cards mx-auto m-3">
+            <CardVertical :id="item.name" :img_src="item.img" :description="item.description" :title="item.name"  />
+          </scroll-page>
+        
+        </scroll-container>
+      </div>
+    <button style="right:-40px" class="w-8 bg-cyan-500 text-white p-2 rounded-full rounded-xl border-2 border-cyan-500 absolute top-1/2" @click='move(1000)'><font-awesome-icon icon="fa-solid fa-chevron-right"/></button>
+  </div>
   </div>
 </template>
 
 <style scoped>
-.container {
-  font-family: "Ubuntu", sans-serif !important;
-}
-
-
 
 .flex-container{
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  overflow-y: hidden;
+  overflow-y: none;
+  scroll-behavior: smooth;
 }
 
 .flex-container::-webkit-scrollbar{

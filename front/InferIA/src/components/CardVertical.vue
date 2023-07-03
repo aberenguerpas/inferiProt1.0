@@ -11,13 +11,14 @@ const props = defineProps(["img_src", 'description', 'title', 'topics']);
           <img :src="img_src" class="w-2/12 mr-4 rounded-md" />
           <div class="flex flex-col w-8/12">
             <h4 class="wrapper-title font-bold text-[#06283D] lg:text-base">{{ title }}</h4>
-            <div class="flex flex-wrap py-1 text-xs" >
+           <div class="flex flex-wrap py-1 text-xs" >
               <div class="m-0.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-2 py-0.5 text-white" v-for="t in topics">
                 {{ t }}
               </div>
             </div>
           </div>
         </div>
+        
           <div class="description-wrapper py-2 leading-6">
             <p class="description text-xs lg:text-base">{{ description }}</p>
           </div>
