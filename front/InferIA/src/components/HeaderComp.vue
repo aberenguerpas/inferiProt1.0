@@ -66,6 +66,12 @@ const toggle = () => {
           Nuestra Historia
         </a>
         <a
+          href="https://www.inferia.io/En-los-medios/"
+          class="block mt-4 lg:inline-block lg:mt-0 hover:text-[#47b5ff] text-gray-600 mr-5"
+        >
+          En los medios
+        </a>
+        <a
           href="https://www.inferia.io/blog-2/"
           class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-[#47b5ff] mr-5"
         >
