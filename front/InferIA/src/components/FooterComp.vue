@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="bg-[#06283D] w-full mt-8 lg:mt-0">
+  <div class="bg-[#06283D] w-full mt-8 lg:mt-0 min-w-[300px]">
     <div class="max-w-screen-xl w-full mx-auto p-10 lg:flex ">
       <div class="lg:w-1/4 w-full">
         <img src="../assets/img/inferia_sin_fondo.png" class="w-32" />

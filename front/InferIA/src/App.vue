@@ -8,11 +8,11 @@ import FooterComp from "./components/FooterComp.vue";
 </script>
 
 <template>
+
   <headerCompVue />
-
-  <RouterView />
-
+  <RouterView/>
   <FooterComp />
+
 </template>
 
 <style scoped>
@@ -26,12 +26,15 @@ import FooterComp from "./components/FooterComp.vue";
   .dataform {
     display: none !important;
   }
+
   .col-8 {
     width: 100%;
   }
-  .dataformMob > img {
+
+  .dataformMob>img {
     width: 30% !important;
   }
+
   body {
     padding-top: 100px;
   }
