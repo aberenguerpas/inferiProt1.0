@@ -2,17 +2,17 @@
 import headerCompVue from "./components/HeaderComp.vue";
 import { RouterView } from "vue-router";
 import FooterComp from "./components/FooterComp.vue";
-
-
-
+import Chatbox from "./components/Chatbox.vue";
 </script>
 
 <template>
 
   <headerCompVue />
-  <RouterView/>
-  <FooterComp />
 
+  <RouterView />
+  <Chatbox />
+  <FooterComp />
+ 
 </template>
 
 <style scoped>

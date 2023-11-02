@@ -32,8 +32,8 @@
             },
             "issued": {"type": "date", "format" : "strict_date_optional_time||epoch_millis"},
             "modified": {"type": "date", "format" : "strict_date_optional_time||epoch_millis"},
-            "license": {"type": "text", "analyzer": "standard"},
-            "source": {"type": "text", "analyzer": "standard"},
+            "license": {"type": "keyword"},
+            "source": {"type": "keyword"},
             "source_name": {"type": "text", "analyzer": "standard"},
             "temporal_coverage": {
                 "properties": {
@@ -47,7 +47,7 @@
                         }
                     }
                 },
-            "spatial_coverage": {"type": "text", "analyzer": "standard"},
+            "spatial_coverage": {"type": "keyword"},
             "sample": {"type": "text"}
         }
     }
